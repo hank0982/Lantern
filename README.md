@@ -1,3 +1,14 @@
+# Cathay Project
+## Structure
+1. Backend: Firebase + NodeJS
+2. Frontend: ReactNative
+## Design
+## Technology Library
+## Reference Library
+1. https://github.com/FuYaoDe/react-native-app-intro
+2. https://github.com/thegamenicorus/react-native-timeline-listview
+
+# Official guide of React Native
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
