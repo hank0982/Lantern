@@ -1,4 +1,5 @@
 # Cathay Project
+## Idea
 ## Structure
 1. Backend: Firebase + NodeJS
 2. Frontend: ReactNative
