@@ -3,7 +3,7 @@
 1. Backend: Firebase + NodeJS
 2. Frontend: ReactNative
 ## Design
-## Technology Library
+## Technology
 ## Reference Library
 1. https://github.com/FuYaoDe/react-native-app-intro
 2. https://github.com/thegamenicorus/react-native-timeline-listview
