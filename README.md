@@ -8,6 +8,10 @@
 ## Reference Library
 1. https://github.com/FuYaoDe/react-native-app-intro
 2. https://github.com/thegamenicorus/react-native-timeline-listview
+3. https://github.com/FaridSafi/react-native-gifted-form
+4. https://github.com/EstebanFuentealba/react-native-share
+5. https://github.com/oblador/react-native-image-progress
+
 
 # Official guide of React Native
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
