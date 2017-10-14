@@ -13,12 +13,15 @@ Jet Lag adjustment combined with inflight timetable arrangement assistant.
 5. Javier - UI/UI Designer
 ## Technology
 ## Reference Library
-1. https://github.com/FuYaoDe/react-native-app-intro
-2. https://github.com/thegamenicorus/react-native-timeline-listview
-3. https://github.com/FaridSafi/react-native-gifted-form
-4. https://github.com/EstebanFuentealba/react-native-share
-5. https://github.com/oblador/react-native-image-progress
-6. https://github.com/moaazsidat/react-native-qrcode-scanner
+1. https://github.com/FuYaoDe/react-native-app-intro // intro at the beginning
+2. https://github.com/thegamenicorus/react-native-timeline-listview // timeline
+3. https://github.com/FaridSafi/react-native-gifted-form // registration form
+4. https://github.com/EstebanFuentealba/react-native-share // sharing
+5. https://github.com/oblador/react-native-image-progress // loading page
+6. https://github.com/moaazsidat/react-native-qrcode-scanner // QR code scanner
+7. https://github.com/gcanti/tcomb-form-native // registration form
+8. https://github.com/mikemonteith/react-native-android-checkbox // check box
+9. https://github.com/react-community/react-native-image-picker // choose photo for profile
 
 
 # Official guide of React Native
