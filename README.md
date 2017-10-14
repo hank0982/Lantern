@@ -5,7 +5,7 @@ Jet Lag adjustment combined with inflight timetable arrangement assistant.
 1. Backend: Firebase + NodeJS
 2. Frontend: ReactNative
 ## Design
-## Position
+## Positions
 1. Hank - Team Leader and FullStack Engineer
 2. Angel - FullStack Engineer
 3. Darren - Project Management and Marketing assistant
