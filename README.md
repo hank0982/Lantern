@@ -1,9 +1,16 @@
-# Cathay Project
+# Lantern
 ## Idea
+Jet Lag adjustment combined with inflight timetable arrangement assistant.
 ## Structure
 1. Backend: Firebase + NodeJS
 2. Frontend: ReactNative
 ## Design
+## Position
+1. Hank - Team Leader and FullStack Engineer
+2. Angel - FullStack Engineer
+3. Darren - Project Management and Marketing assistant
+4. Thomas - Data Management and Backend engineer
+5. Javier - UI/UI Designer
 ## Technology
 ## Reference Library
 1. https://github.com/FuYaoDe/react-native-app-intro
