@@ -22,6 +22,8 @@ Jet Lag adjustment combined with inflight timetable arrangement assistant.
 7. https://github.com/gcanti/tcomb-form-native // registration form
 8. https://github.com/mikemonteith/react-native-android-checkbox // check box
 9. https://github.com/react-community/react-native-image-picker // choose photo for profile
+10. https://github.com/jacklam718/react-native-popup-dialog // popup dialog, can be used in meal offering
+11. https://github.com/react-native-community/react-native-modal // pupop windows, used in warning
 
 
 # Official guide of React Native
