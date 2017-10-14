@@ -18,6 +18,7 @@ Jet Lag adjustment combined with inflight timetable arrangement assistant.
 3. https://github.com/FaridSafi/react-native-gifted-form
 4. https://github.com/EstebanFuentealba/react-native-share
 5. https://github.com/oblador/react-native-image-progress
+6. https://github.com/moaazsidat/react-native-qrcode-scanner
 
 
 # Official guide of React Native
