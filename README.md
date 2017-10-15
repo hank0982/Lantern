@@ -24,6 +24,7 @@ Jet Lag adjustment combined with inflight timetable arrangement assistant.
 9. https://github.com/react-community/react-native-image-picker // choose photo for profile
 10. https://github.com/jacklam718/react-native-popup-dialog // popup dialog, can be used in meal offering
 11. https://github.com/react-native-community/react-native-modal // pupop windows, used in warning
+12. https://reactnavigation.org/docs/intro/ //the navigation assistant for react-native
 
 
 # Official guide of React Native
