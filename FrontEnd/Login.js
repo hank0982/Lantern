@@ -23,7 +23,7 @@ export default class Login extends React.Component {
         }       
     };
     onLoginPress(){
-        LoginAPI.loginWithEmail(this.state.username, this.state.password);
+        LoginAPI.loginWithEmail(this.props.screenProps.firebase, this.state.username, this.state.password);
     }
     render() {
       const { navigate } = this.props.navigation;

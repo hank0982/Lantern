@@ -1,9 +1,6 @@
-import * as firebase from 'firebase';
-import firebaseConfig from '../key';
-firebase.initializeApp(firebaseConfig);
 module.exports = {
     LoginAPI: {
-        loginWithEmail(email, password) {
+        loginWithEmail(firebase, email, password) {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(function(firebaseUser) {
                     alert(firebaseUser.email);
