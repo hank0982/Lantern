@@ -7,6 +7,7 @@ registerStyleSheet = StyleSheet.create({
         justifyContent: 'center',
         padding: 5,
         paddingTop: 65,
+        paddingLeft: 55,
         backgroundColor: '#000000',
     },
     texts: {
@@ -17,7 +18,7 @@ navigationOptions = {
     title: 'Register',
     headerTintColor: "#FAA916",
     headerStyle: {
-        backgroundColor: 'black',
+        backgroundColor: '#FFFFFF',
         elevation: null
     }
 };
