@@ -6,8 +6,7 @@ registerStyleSheet = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         padding: 5,
-        paddingTop: 90,
-        paddingLeft: 90,
+        paddingTop: 15,
         backgroundColor: '#000000',
     },
     texts: {
@@ -18,9 +17,9 @@ navigationOptions = {
     title: 'Register',
     headerTintColor: "#FAA916",
     headerStyle: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#E9ECEB',
         elevation: null
     }
 };
-textInput = { baseColor: '#FAA916', tintColor: '#FFFFFF', label: 'Username', textColor: '#FFFFFF' }
+textInput = { baseColor: '#FAA916', tintColor: '#E9ECEB', label: 'Username', textColor: '#E9ECEB' }
 module.exports = { stylesheet: registerStyleSheet, navigationOptions: navigationOptions, textInput: textInput };

@@ -7,7 +7,7 @@ loginStyleSheet = StyleSheet.create({
         justifyContent: 'center',
         padding: 5,
         paddingTop: 75,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#E9ECEB'
     },
     texts: {
         color: '#016565'
@@ -17,7 +17,7 @@ navigationOptions = {
     title: 'Login',
     headerTintColor: '#FDDA00',
     headerStyle: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#E9ECEB',
         elevation: null
     }
 };
