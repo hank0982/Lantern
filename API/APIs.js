@@ -85,12 +85,5 @@ module.exports = {
 
             });
         },
-
-        addFlightInfo(firebase, flightDate) {
-            var userId = firebase.auth().currentUser.uid;
-            firebase.database().ref('users/' + userId + '/').set({
-                flightInfo: flightDate
-            });
-        }
     },
 }
