@@ -51,7 +51,7 @@ module.exports = {
 
             var activityArr = {};
             for (var i = 0; i < sliceNum; i++) {
-                activityArr[i.toString()] = null;
+                activityArr[i.toString()] = '0';
             }
 
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
