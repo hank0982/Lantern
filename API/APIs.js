@@ -90,5 +90,25 @@ module.exports = {
                 
             });
         },
+
     },
+    ActivityAPI: {
+        lookupActivity(firebase, category, title) {
+            var userId = firebase.auth().currentUser.uid;
+            if (category && title) {
+                firebase.database().ref('activities/' + category + '/' + title).once('value').then(function(snap) {
+                    return snap;
+                });
+            } else if (category) {
+                firebase.database().ref('activities/' + category).once('value').then(function(snap) {
+                    return snap;
+                })
+            } else {
+                firebase.database().ref('activities/').once('value').then(function(snap) {
+                    return snap;
+                })
+            }
+        },
+
+    }
 }

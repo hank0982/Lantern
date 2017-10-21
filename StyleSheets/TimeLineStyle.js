@@ -39,5 +39,4 @@ navigationOptions = {
         elevation: null
     }
 };
-textInput = { baseColor: '#000000', tintColor: '#000000', label: 'Username', textColor: '#000000' }
 module.exports = { stylesheet: TimeLineStyleSheet, navigationOptions: navigationOptions, textInput: textInput };

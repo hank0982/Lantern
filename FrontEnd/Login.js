@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image} from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import LoginStyle from '../StyleSheets/LoginStyle';
 import Button from 'apsl-react-native-button';
@@ -24,6 +24,10 @@ export default class Login extends React.Component {
       return (
         <View style={LoginStyle.stylesheet.container}>
             <View style = {{width: '70%'}}>
+            <Image
+                style={{width: 50, height: 50}}
+                source={{uri: '../Assets/Logomakr_3EDWIY.png'}}
+            />
                 <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Username' textColor = {LoginStyle.textInput.textColor} onChangeText = {(username) => this.setState({username: username})}/>
                 <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Password' secureTextEntry={true} textColor = {LoginStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
                 <View style = {{paddingTop: 20}}>

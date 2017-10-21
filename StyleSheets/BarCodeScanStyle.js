@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Constants, BarCodeScanner, Permissions } from 'expo';
 
-loginStyleSheet = StyleSheet.create({
+BarCodeScanStyleSheet = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -22,5 +22,4 @@ navigationOptions = {
         elevation: null
     }
 };
-textInput = { baseColor: '#000000', tintColor: '#000000', label: 'Username', textColor: '#000000' }
-module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions, textInput: textInput };
+module.exports = { stylesheet: BarCodeScanStyleSheet, navigationOptions: navigationOptions, textInput: textInput };
