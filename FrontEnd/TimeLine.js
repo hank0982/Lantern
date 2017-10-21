@@ -50,7 +50,7 @@ export default class TimeLine extends React.Component {
 
   renderSelected(){
       if(this.state.selected)
-        return <Text style={{marginTop:10}}>Selected event: {this.state.selected.title} at {this.state.selected.time}</Text>
+        return <Text style={{marginTop:}}>Selected event: {this.state.selected.title} at {this.state.selected.time}</Text>
   }
 
   renderDetail(rowData, sectionID, rowID) {
@@ -97,32 +97,4 @@ export default class TimeLine extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-	paddingTop:65,
-    backgroundColor:'white'
-  },
-  list: {
-    flex: 1,
-    marginTop:20,
-  },
-  title:{
-    fontSize:16,
-    fontWeight: 'bold'
-  },
-  descriptionContainer:{
-    flexDirection: 'row',
-    paddingRight: 50
-  },
-  image:{
-    width: 50,
-    height: 50,
-    borderRadius: 25
-  },
-  textDescription: {
-    marginLeft: 10,
-    color: 'gray'
-  }
-});
+const styles = TimeLineStyle.stylesheet;
