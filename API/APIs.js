@@ -41,12 +41,19 @@ module.exports = {
                 });
         }
     },
+
     timelineAPI: {
+        // duration unit is in minutes
+        insertActivities(firebase, userId, flightDate, duration){
+            var sliceNum = Math.floor(duration / 30);
+            var activityArr = [];
+            for (var i = 0; i < sliceNum; i++) { 
+                activityArr.push(null);
+            }
 
-
-
+            firebase.database().ref('users/' + userId + '/' + flightDate).set({
+                activities: activityArr
+            });
+        }
     }
-
-
-
 }
