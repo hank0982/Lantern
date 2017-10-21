@@ -39,10 +39,7 @@ class RowComponent extends React.Component {
           }}
           {...this.props.sortHandlers}
         >
-          <View style={{flex:1}}>
-            {title}
-            {desc}
-          </View>
+          
           <Text style={{padding: this.props.data.padding}}>{this.props.data.text}</Text>
         </TouchableHighlight>
         
@@ -52,7 +49,11 @@ class RowComponent extends React.Component {
 
 class TimeLine extends React.Component {
   componentDidMount(){
-    
+    TimeLineAPI.returnActivities(this.props.screenProps.firebase, '20171023').then(
+      function(snap){
+        
+      }
+    );
   }
   render() {
     return (

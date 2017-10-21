@@ -67,7 +67,7 @@ module.exports = {
             firebase.database().ref('users/' + userId + '/' + flightData + '/activities').once('value').then(function(snap) {
                 return snap;
             });
-        }
+        },
         // path is the path to the exact activity (e.g. fight club)
         // startIndex is an integer
         insertActivities(firebase, flightDate, path, startIndex) {
