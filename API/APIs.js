@@ -1,9 +1,21 @@
 module.exports = {
+    SignUpAPI:{
+        signUpWithEmail(firebase, email, pwd){
+            if( !email.include('@')){
+                alert('Invalid Email!');
+            }
+            
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+            .catch(function(error){
+                
+            });
+        }
+    },
     LoginAPI: {
         loginWithEmail(firebase, email, password) {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(function(firebaseUser) {
-                    alert(firebaseUser.email);
+                    return firebaseUser;
                 })
                 .catch(function(error) {
                     var errorCode = error.code;
