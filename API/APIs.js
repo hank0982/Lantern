@@ -63,8 +63,9 @@ module.exports = {
             });
         },
 
-        // path is the path to 
-        insertActivities(firebase, flightDate, path) {
+        // path is the path to the exact activity (e.g. fight club)
+        // startIndex is an integer
+        insertActivities(firebase, flightDate, path, startIndex) {
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref(path).once('value').then(function(snapshot) {
                 var length = (snapshot.val() && snapshot.val().duration) || 'ERROR';
@@ -74,11 +75,15 @@ module.exports = {
                 else {
                     var span = Math.round(length / 30);
                 }
-                return span;
-            });
-            console.log('we are in the main function');
-            console.log(span);
 
+                firebase.database().ref().update(updates);
+
+                for (var i = startIndex; i < startIndex + span; i++){
+
+                }
+
+
+            });
         },
 
         addFlightInfo(firebase, flightDate) {
