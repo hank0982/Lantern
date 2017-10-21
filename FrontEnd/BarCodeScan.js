@@ -20,10 +20,19 @@ export default class BarCodeScan extends Component {
   };
 
   _handleBarCodeRead = data => {
-    Alert.alert(
-      'Scan successful!',
-      JSON.stringify(data)
-    );
+    if(data.type == "org.iso.PDF417"){
+      var start = data.data.split(" ")[10].slice(0,3);
+      var end = data.data.split(" ")[10].slice(3,6);
+      var flightCode = data.data.split(" ")[10].slice(6,8).concat(data.data.split(" ")[11]);
+      var name = data.data.split(" ")[0].slice(2);
+      var perData = {
+        start : start,
+        end : end,
+        flightCode : flightCode,
+        name : name
+      }
+      this.props.navigation.navigate('TimeLine');
+    }
   };
 
   render() {
@@ -35,7 +44,7 @@ export default class BarCodeScan extends Component {
             <Text>Camera permission is not granted</Text> :
             <BarCodeScanner
               onBarCodeRead={this._handleBarCodeRead}
-              style={{ height: 200, width: 200 }}
+              style={{ height: 400, width: 400 }}
             />
         }
       </View>
