@@ -15,11 +15,11 @@ loginStyleSheet = StyleSheet.create({
 });
 navigationOptions = {
     title: 'Login',
-    headerTintColor: '#FDDA00',
+    headerTintColor: '#016565',
     headerStyle: {
         backgroundColor: '#E9ECEB',
         elevation: null
     }
 };
-textInput = { baseColor: '#016565', tintColor: '#000000', label: 'Username', textColor: '#000000' }
+textInput = { baseColor: '#000000', tintColor: '#000000', label: 'Username', textColor: '#000000' }
 module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions, textInput: textInput };

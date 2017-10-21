@@ -26,7 +26,7 @@ export default class Login extends React.Component {
             <TextField baseColor={RegisterStyle.textInput.baseColor} tintColor={RegisterStyle.textInput.tintColor} label='Password' secureTextEntry={true} textColor = {RegisterStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
             <TextField baseColor={RegisterStyle.textInput.baseColor} tintColor={RegisterStyle.textInput.tintColor} label='Re-Password' secureTextEntry={true} textColor = {RegisterStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
                 <View style = {{paddingTop: 20}}>
-                    <Button style={{backgroundColor: '#FAA916'}} textStyle={{fontSize: 18, color: '#FFFFFF'}} onPress={()=>this.onSubmitPress()}>
+                    <Button style={{backgroundColor: '#016565'}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>this.onSubmitPress()}>
                         Submit
                     </Button>
                 </View>

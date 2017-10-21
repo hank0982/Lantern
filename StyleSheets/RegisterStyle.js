@@ -7,10 +7,10 @@ registerStyleSheet = StyleSheet.create({
         justifyContent: 'center',
         padding: 5,
         paddingTop: 15,
-        backgroundColor: '#000000',
+        backgroundColor: '#E9ECEB',
     },
     texts: {
-        color: '#4A9191'
+        color: '#016565'
     }
 });
 navigationOptions = {
@@ -21,5 +21,5 @@ navigationOptions = {
         elevation: null
     }
 };
-textInput = { baseColor: '#FAA916', tintColor: '#E9ECEB', label: 'Username', textColor: '#E9ECEB' }
+textInput = { baseColor: '#000000', tintColor: '#000000', label: 'Username', textColor: '#000000' }
 module.exports = { stylesheet: registerStyleSheet, navigationOptions: navigationOptions, textInput: textInput };
