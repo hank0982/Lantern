@@ -16,7 +16,7 @@ export default class Login extends React.Component {
     // Config header check
     static navigationOptions = LoginStyle.navigationOptions;
     onLoginPress(){
-        console.log(LoginAPI.loginWithEmail(this.props.screenProps.firebase, this.state.username, this.state.password));
+        LoginAPI.loginWithEmail(this.props.screenProps.firebase, this.state.username, this.state.password);
         this.props.navigation.navigate('BarCodeScan');
     }
     render() {

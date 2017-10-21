@@ -27,6 +27,7 @@ module.exports = {
         loginWithEmail(firebase, email, password) {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(function(firebaseUser) {
+                    console.log('sucess');
                     return firebase.auth().currentUser;
                 })
                 .catch(function(error) {
