@@ -1,33 +1,34 @@
 module.exports = {
-    SignUpAPI:{
-        signUpWithEmail(firebase, email, pwd){
-            if( !email.include('@')){
+    SignUpAPI: {
+        signUpWithEmail(firebase, email, pwd) {
+            if (!email.include('@')) {
                 alert('Invalid Email!');
                 return;
             }
-            
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(function(user) {
-                LoginAPI.loginWithEmail(firebase, email, passward);
-            })
-            .catch(function(error){
-                var errorCode = error.code;
-                var errorMessage = error.message;
 
-                if (errorCode == 'auth/weak-password') {
-                    alert('The password is too weak.');
-                } else {
-                    alert(errorMessage);
-                }
-                console.log(error);
-            });
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then(function(user) {
+                    LoginAPI.loginWithEmail(firebase, email, passward);
+                })
+                .catch(function(error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+
+                    if (errorCode == 'auth/weak-password') {
+                        alert('The password is too weak.');
+                    } else {
+                        alert(errorMessage);
+                    }
+                    console.log(error);
+                });
         }
     },
     LoginAPI: {
         loginWithEmail(firebase, email, password) {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(function(firebaseUser) {
-                    return firebaseUser;
+                    console.log('sucess');
+                    return firebase.auth().currentUser;
                 })
                 .catch(function(error) {
                     var errorCode = error.code;
@@ -47,7 +48,7 @@ module.exports = {
         addActivityArray(firebase, userId, flightDate, duration){
             var sliceNum = Math.floor(duration / 30);
             var activityArr = [];
-            for (var i = 0; i < sliceNum; i++) { 
+            for (var i = 0; i < sliceNum; i++) {
                 activityArr.push(null);
             }
 
