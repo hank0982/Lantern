@@ -9,8 +9,8 @@ export default class Login extends React.Component {
     constructor(){
       super();
       this.state = {
-          username: null,
-          password: null
+          username: '',
+          password: ''
       }
     }
     // Config header check
