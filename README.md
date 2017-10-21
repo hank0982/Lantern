@@ -7,10 +7,10 @@ Jet Lag adjustment combined with inflight timetable arrangement assistant.
 ## Design
 ## Positions
 1. Hank - Team Leader and FullStack Engineer
-2. Angel - FullStack Engineer
+2. Pei Fang - FullStack Engineer
 3. Darren - Project Management and Marketing assistant
 4. Thomas - Data Management and Backend engineer
-5. Javier - UI/UI Designer
+5. Javier - UI/UX Designer
 ## Technology
 ## Reference Library
 1. https://github.com/FuYaoDe/react-native-app-intro // intro at the beginning
