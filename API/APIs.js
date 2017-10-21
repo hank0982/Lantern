@@ -62,32 +62,36 @@ module.exports = {
                 activities: activityArr
             });
         },
-
+        returnActivities(firebase, flightData) {
+            var userId = firebase.auth().currentUser.uid;
+            firebase.database().ref('users/' + userId + '/' + flightData + '/activities').once('value').then(function(snap) {
+                return snap;
+            });
+        }
         // path is the path to the exact activity (e.g. fight club)
         // startIndex is an integer
         insertActivities(firebase, flightDate, path, startIndex) {
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref(path).once('value').then(function(snapshot) {
                 var length = (snapshot.val() && snapshot.val().duration) || 'DURATION ERROR';
-                if (length == 'DURATION ERROR'){
+                if (length == 'DURATION ERROR') {
                     console.log(length);
-                }
-                else {
+                } else {
                     var span = Math.round(length / 30);
                 }
 
-                var result = path.split("/");   
+                var result = path.split("/");
                 // result[1] is category and result[2] is objectTitle     
 
                 var updates = {};
-                var change = {"category": result[1], "title": result[2]};
+                var change = { "category": result[1], "title": result[2] };
 
-                for (var i = startIndex; i < startIndex + span; i++){
+                for (var i = startIndex; i < startIndex + span; i++) {
                     updates[i.toString()] = change;
                 }
 
                 firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').update(updates);
-                
+
             });
         },
     },

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image ,TouchableHighlight} from 'react-native';
 import SortableListView from 'react-native-sortable-listview'
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
-
+import {TimeLineAPI, ActivitiesAPI} from '../API/APIs';
 let data = {
   hello: { text: 'world', padding: 2},
   how: { text: 'are you',padding: 2 },
@@ -39,6 +39,10 @@ class RowComponent extends React.Component {
           }}
           {...this.props.sortHandlers}
         >
+          <View style={{flex:1}}>
+            {title}
+            {desc}
+          </View>
           <Text style={{padding: this.props.data.padding}}>{this.props.data.text}</Text>
         </TouchableHighlight>
         
@@ -47,6 +51,9 @@ class RowComponent extends React.Component {
 }
 
 class TimeLine extends React.Component {
+  componentDidMount(){
+    
+  }
   render() {
     return (
       <View style={{flexDirection: 'row', height: '100%'}}>
