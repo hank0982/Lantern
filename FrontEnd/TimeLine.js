@@ -50,7 +50,7 @@ export default class TimeLine extends React.Component {
 
   renderSelected(){
       if(this.state.selected)
-        return <Text style={{marginTop:}}>Selected event: {this.state.selected.title} at {this.state.selected.time}</Text>
+        return <Text style={{marginTop: 5}}>Selected event: {this.state.selected.title} at {this.state.selected.time}</Text>
   }
 
   renderDetail(rowData, sectionID, rowID) {
