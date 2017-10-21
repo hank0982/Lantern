@@ -5,7 +5,7 @@ module.exports = {
                 alert('Invalid Email!');
                 return 0;
             }
-            if(pwd != repwd){
+            if (pwd != repwd) {
                 alert('the first pwd and the second is different~');
                 return -1;
             }
@@ -24,7 +24,7 @@ module.exports = {
                     }
                     console.log(error);
                 });
-                return 0;
+            return 0;
         }
     },
     LoginAPI: {
@@ -49,7 +49,7 @@ module.exports = {
 
     timelineAPI: {
         // duration unit is in minutes
-        addActivityArray(firebase, flightDate, duration){
+        addActivityArray(firebase, flightDate, duration) {
             var userId = firebase.auth().currentUser.uid;
             var sliceNum = Math.floor(duration / 30);
 
@@ -63,16 +63,17 @@ module.exports = {
             });
         },
 
-        
-        insertActivities(firebase, flightDate, path){
+
+        insertActivities(firebase, flightDate, path) {
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
                 var index = (snapshot.val() && snapshot.val().username) || 'Anonymous';
             });
         },
-        
 
-        addFlightInfo(firebase, flightDate){
+
+
+        addFlightInfo(firebase, flightDate) {
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref('users/' + userId + '/').set({
                 flightInfo: flightDate

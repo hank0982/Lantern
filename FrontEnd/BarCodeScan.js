@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Constants, BarCodeScanner, Permissions } from 'expo';
 import { StackNavigator } from 'react-navigation';
+import {timelineAPI} from '../API/APIs';
 function delay(time) {
   return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(), time);
@@ -40,6 +41,7 @@ export default class BarCodeScan extends Component {
         flightCode : flightCode,
         name : name
       }
+      timelineAPI.addActivityArray(this.props.screenProps.firebase, '20171023', 10*60);
       this.props.navigation.navigate('TimeLine');
     }
   };
