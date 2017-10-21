@@ -86,7 +86,7 @@ module.exports = {
                     updates[i.toString()] = change;
                 }
 
-                firebase.database().ref('users/' + userId + +'/' + flightDate).update(updates);
+                firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').update(updates);
                 
             });
         },
