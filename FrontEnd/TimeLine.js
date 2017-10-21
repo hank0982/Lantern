@@ -28,17 +28,27 @@ var modal = StyleSheet.create({
   },
 });
 let data = {
-  hello: { text: 'world', padding: 2},
-  how: { text: 'are you',padding: 2 },
-  test: { text: 123,padding: 2 },
-  this: { text: 'is',padding: 100 },
-  a: { text: 'a',padding: 2 },
-  real: { text: 'real' ,padding: 2},
-  drag: { text: 'drag and drop' ,padding: 2},
-  bb: { text: 'bb' ,padding: 2},
-  cc: { text: 'cc',padding: 2 },
-  dd: { text: 'dd',padding: 2 },
-  
+  hello: { text: '9:30', padding: 2},
+  how: { text: '10:00',padding: 2 },
+  test: { text: '10:30',padding: 2 },
+  this: { text: '11:00',padding: 100 },
+  a: { text: '11:30',padding: 2 },
+  real: { text: '11:00' ,padding: 2},
+  drag: { text: '11:30' ,padding: 2},
+  bb: { text: '12:00' ,padding: 2},
+  cc: { text: '12:30',padding: 2 },
+  ee: { text: '13:00',padding: 2 },
+  ss: { text: '13:30',padding: 2 },
+  gg: { text: '14:00',padding: 2 },
+  asd: { text: '14:30',padding: 2 },
+  qwe: { text: '15:00',padding: 2 },
+  zxcv: { text: '15:30',padding: 2 },
+  asdf: { text: '16:00',padding: 2 },
+  qwer: { text: '16:30',padding: 2 },
+  fds: { text: '17:00',padding: 2 },
+  sda: { text: '17:30',padding: 2 },
+  gfsd: { text: '18:00',padding: 2 },
+
 }
 const menus = [
     {
