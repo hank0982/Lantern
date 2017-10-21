@@ -6,8 +6,8 @@ registerStyleSheet = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         padding: 5,
-        paddingTop: 65,
-        paddingLeft: 55,
+        paddingTop: 90,
+        paddingLeft: 90,
         backgroundColor: '#000000',
     },
     texts: {
