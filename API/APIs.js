@@ -80,7 +80,7 @@ module.exports = {
                 // result[1] is category and result[2] is objectTitle     
 
                 var updates = {};
-                var change = {"category": result[1], "title": result[2]};
+                var change = {"category": result[1], "title": result[2], "span": span};
 
                 for (var i = startIndex; i < startIndex + span; i++){
                     updates[i.toString()] = change;
