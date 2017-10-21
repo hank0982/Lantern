@@ -25,8 +25,8 @@ export default class Login extends React.Component {
         <View style={LoginStyle.stylesheet.container}>
             <View style = {{width: '70%'}}>
             <Image
-                style={{width: 50, height: 50}}
-                source={require('../Assets/Pictures/Logo.png')}
+                style={{paddingLeft:10, width: 240, height: 50}}
+                source={require('../Assets/Pictures/NewLogo.png')}
             />
                 <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Username' textColor = {LoginStyle.textInput.textColor} onChangeText = {(username) => this.setState({username: username})}/>
                 <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Password' secureTextEntry={true} textColor = {LoginStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
