@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-module.exports = StyleSheet.create({
+loginStyleSheet = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
@@ -10,14 +10,15 @@ module.exports = StyleSheet.create({
         backgroundColor: '#000000',
     },
     texts: {
-        color: '#FFFFFF'
-    },
-    navigationOptions: {
-        title: 'Login',
-        headerTintColor: "#FAA916",
-        headerStyle: {
-            backgroundColor: 'black',
-            elevation: null
-        }
+        color: '#4A9191'
     }
 });
+navigationOptions = {
+    title: 'Login',
+    headerTintColor: "#FAA916",
+    headerStyle: {
+        backgroundColor: 'black',
+        elevation: null
+    }
+}
+module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions };

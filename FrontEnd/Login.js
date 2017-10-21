@@ -21,7 +21,7 @@ export default class Login extends React.Component {
     render() {
       const { navigate } = this.props.navigation;
       return (
-        <View style={LoginStyle.container}>
+        <View style={LoginStyle.stylesheet.container}>
             <View style = {{width: '70%'}}>
                 <TextField baseColor={'#FAA916'} tintColor={'#FFFFFF'} label='Username' textColor = {'#FFFFFF'} onChangeText = {(username) => this.setState({username: username})}/>
                 <TextField baseColor={'#FAA916'} tintColor={'#FFFFFF'} label='Password' secureTextEntry={true} textColor = {'#FFFFFF'}  onChangeText = {(password) => this.setState({password: password})}/>
