@@ -7,7 +7,7 @@ TimeLineStyleSheet = StyleSheet.create({
         flex: 1,
         padding: 20,
         paddingTop: 20,
-        backgroundColor: 'white'
+        backgroundColor: '#E9ECEB'
     },
     list: {
         flex: 1,
@@ -15,7 +15,8 @@ TimeLineStyleSheet = StyleSheet.create({
     },
     title: {
         fontSize: 16,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color:'#CAAE03'
     },
     descriptionContainer: {
         flexDirection: 'row',
@@ -33,7 +34,7 @@ TimeLineStyleSheet = StyleSheet.create({
 });
 navigationOptions = {
     title: 'TimeLine',
-    headerTintColor: "#FAA916",
+    headerTintColor: "#016565",
     headerStyle: {
         backgroundColor: '#E9ECEB',
         elevation: null

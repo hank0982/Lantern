@@ -44,37 +44,37 @@ const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
+       backgroundColor:'#CAAE03',
        borderColor:'#388E3C',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
+       backgroundColor:'#CAAE03',
        borderColor:'#388E3C',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
+       backgroundColor:'#CAAE03',
        borderColor:'#388E3C',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#CAAE03',
+       borderColor:'#CAAE03',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
+       backgroundColor:'#CAAE03',
        borderColor:'#388E3C',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
+       backgroundColor:'#CAAE03',
        borderColor:'#388E3C',
     }
 
@@ -98,7 +98,7 @@ class RowComponent extends React.Component {
     this.state = {
       isModalVisible: false,
       title: 'Movies',
-      onOff: '#caae03',
+      onOff: '#CAAE03',
     }
   }
   onPressButtonMenu(menu) {
