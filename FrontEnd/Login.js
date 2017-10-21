@@ -31,7 +31,7 @@ export default class Login extends React.Component {
                     </Button>
                 </View>
                 <View style = {{paddingTop: 20}}>
-                    <Button style={{backgroundColor: '#000000', borderColor: '#FAA916', borderWidth: 2}} textStyle={{fontSize: 18, color: '#FFFFFF'}} onPress={()=>navigate('BarCodeScan')}>
+                    <Button style={{backgroundColor: '#000000', borderColor: '#FAA916', borderWidth: 2}} textStyle={{fontSize: 18, color: '#FFFFFF'}} onPress={()=>navigate('RegPre')}>
                         Register
                     </Button>
                 </View>

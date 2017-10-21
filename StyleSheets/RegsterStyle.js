@@ -22,4 +22,4 @@ navigationOptions = {
     }
 };
 textInput = { baseColor: '#FAA916', tintColor: '#FFFFFF', label: 'Username', textColor: '#FFFFFF' }
-module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions, textInput: textInput };
+module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions };
