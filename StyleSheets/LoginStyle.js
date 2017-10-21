@@ -7,7 +7,7 @@ loginStyleSheet = StyleSheet.create({
         justifyContent: 'center',
         padding: 5,
         paddingTop: 75,
-        backgroundColor: '#E9ECEB'
+        backgroundColor: '#E9ECEB',
     },
     texts: {
         color: '#016565'
