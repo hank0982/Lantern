@@ -53,23 +53,26 @@ module.exports = {
                 activityArr.push(null);
             }
 
-            firebase.database().ref('/users/' + userId + '/' + flightDate).set({
-                activities: activityArr
+            var objArr = {};
+            for (var i = 0; i < activityArr.length; ++i)
+                objArr[i] = activityArr[i];
+   
+            firebase.database().ref('users/' + userId + '/' + flightDate).set({
+                activities: objArr
             });
         },
-        /*
+/*
         insertActivities(firebase, flightDate, path){
             var userId = firebase.auth().currentUser.uid;
-            return firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
+            var index = firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
                 var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-            )};
-            
+            });
         },
-        */
+*/
 
         addFlightInfo(firebase, flightDate){
             var userId = firebase.auth().currentUser.uid;
-            firebase.database().ref('/users/' + userId + '/').set({
+            firebase.database().ref('users/' + userId + '/').set({
                 flightInfo: flightDate
             });
         }
