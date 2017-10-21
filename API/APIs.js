@@ -34,10 +34,13 @@ module.exports = {
     },
 
     timelineAPI: {
+        // duration unit is in minutes
+        insertActivities(firebase, duration){
+            var sliceNum = duration / 30;
+        },
+        
 
-
-
-    }
+    },
 
 
 
