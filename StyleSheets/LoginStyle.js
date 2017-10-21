@@ -11,5 +11,13 @@ module.exports = StyleSheet.create({
     },
     texts: {
         color: '#FFFFFF'
+    },
+    navigationOptions: {
+        title: 'Login',
+        headerTintColor: "#FAA916",
+        headerStyle: {
+            backgroundColor: 'black',
+            elevation: null
+        }
     }
 });
