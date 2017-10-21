@@ -52,14 +52,14 @@ export default class BarCodeScan extends Component {
   render() {
     return (
       <View style={BarCodeScanStyle.stylesheet.container}>
-        <Text> Please Scan your Ticket's Barcode </Text>
+        <Text style={BarCodeScanStyle.stylesheet.texts}> Please Scan your Ticket's Barcode </Text>
         {this.state.hasCameraPermission === null ?
           <Text>Requesting for camera permission</Text> :
           this.state.hasCameraPermission === false ?
             <Text>Camera permission is not granted</Text> :
             <BarCodeScanner
               onBarCodeRead={this._handleBarCodeRead}
-              style={{ height: 400, width: 400 }}
+              style={{ height: 300, width: 300 }}
             />
         }
       </View>

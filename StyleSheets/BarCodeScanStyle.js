@@ -8,10 +8,11 @@ BarCodeScanStyleSheet = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#ecf0f1',
+        backgroundColor: '#016565',
     },
     texts: {
-        color: '#016565'
+        color: '#E9ECEB',
+        fontWeight: 'bold'
     }
 });
 navigationOptions = {
