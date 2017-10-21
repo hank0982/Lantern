@@ -22,9 +22,12 @@
       }
     }
     changeUser(user){
-      this.setState({
-        user: user
-      })
+      if(user){
+        this.setState({
+          user: user
+        });
+        return true;
+      }
     }
     render(){
       return <Pages screenProps = {{firebase: firebase, user: this.state.user, setUser: this.changeUser.bind(this)}}/>;
