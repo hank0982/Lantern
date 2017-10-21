@@ -10,7 +10,7 @@
   const Pages = StackNavigator({
     Home : { screen: Login },
     BarCodeScan : {screen: BarCodeScan},
-    RegPre : {screen: BarCodeScan}
+    RegPre : {screen: RegPre}
   });
   export default class App extends React.Component {
     render(){

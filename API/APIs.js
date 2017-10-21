@@ -13,7 +13,7 @@ module.exports = {
                     } else {
                         alert(errorMessage);
                     }
-                    console.log(error);
+                    alert(error);
                 });
         }
     },
@@ -21,9 +21,9 @@ module.exports = {
 
     },
 
-    timelineAPI:{
+    timelineAPI: {
 
-        
+
 
     }
 
