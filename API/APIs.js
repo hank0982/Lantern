@@ -44,7 +44,7 @@ module.exports = {
 
     timelineAPI: {
         // duration unit is in minutes
-        insertActivities(firebase, userId, flightDate, duration){
+        addActivityArray(firebase, userId, flightDate, duration){
             var sliceNum = Math.floor(duration / 30);
             var activityArr = [];
             for (var i = 0; i < sliceNum; i++) { 
@@ -53,6 +53,17 @@ module.exports = {
 
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
                 activities: activityArr
+            });
+        }//,
+        //insertActivities(firebase, ){
+
+        //}
+    },
+
+    storeFlightAPI:{
+        addFlightInfo(firebase, userId, flightDate){
+            firebase.database().ref('users/' + userId + '/').set({
+                flightInfo: flightDate
             });
         }
     }
