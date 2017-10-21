@@ -6,20 +6,20 @@ loginStyleSheet = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         padding: 5,
-        paddingTop: 65,
-        backgroundColor: '#000000',
+        paddingTop: 75,
+        backgroundColor: '#FFFFFF'
     },
     texts: {
-        color: '#4A9191'
+        color: '#016565'
     }
 });
 navigationOptions = {
     title: 'Login',
-    headerTintColor: "#FAA916",
+    headerTintColor: '#FDDA00',
     headerStyle: {
-        backgroundColor: 'black',
+        backgroundColor: '#FFFFFF',
         elevation: null
     }
 };
-textInput = { baseColor: '#FAA916', tintColor: '#FFFFFF', label: 'Username', textColor: '#FFFFFF' }
+textInput = { baseColor: '#016565', tintColor: '#000000', label: 'Username', textColor: '#000000' }
 module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions, textInput: textInput };
