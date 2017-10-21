@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Constants, BarCodeScanner, Permissions } from 'expo';
 import { StackNavigator } from 'react-navigation';
-
+function delay(time) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(), time);
+  });
+}
 export default class BarCodeScan extends Component {
   state = {
+    read: null,
     hasCameraPermission: null
   };
 
@@ -19,7 +24,11 @@ export default class BarCodeScan extends Component {
     });
   };
 
-  _handleBarCodeRead = data => {
+  _handleBarCodeRead = async data => {
+    await delay(500);
+    if (this.state.read == data.data) return;
+    this.setState({ read: data.data });
+
     if(data.type == "org.iso.PDF417"){
       var start = data.data.split(" ")[10].slice(0,3);
       var end = data.data.split(" ")[10].slice(3,6);
