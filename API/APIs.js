@@ -73,33 +73,27 @@ module.exports = {
         // startIndex is an integer
         insertActivities(firebase, flightDate, path, startIndex) {
             var userId = firebase.auth().currentUser.uid;
+            return firebase.database().ref(path).once('value').then(function(snapshot) {
+                var length = (snapshot.val() && snapshot.val().duration) || 'DURATION ERROR';
+                if (length == 'DURATION ERROR') {
+                    console.log(length);
+                } else {
+                    var span = Math.round(length / 30);
+                }
 
-            if{
+                var result = path.split("/");
+                // result[1] is category and result[2] is objectTitle     
 
-            }
-            else{
-                return firebase.database().ref(path).once('value').then(function(snapshot) {
-                    var length = (snapshot.val() && snapshot.val().duration) || 'DURATION ERROR';
-                    if (length == 'DURATION ERROR') {
-                        console.log(length);
-                    } else {
-                        var span = Math.round(length / 30);
-                    }
+                var updates = {};
+                var change = { "category": result[1], "title": result[2], "span": span };
 
-                    var result = path.split("/");
-                    // result[1] is category and result[2] is objectTitle     
+                for (var i = startIndex; i < startIndex + span; i++) {
+                    updates[i.toString()] = change;
+                }
 
-                    var updates = {};
-                    var change = { "category": result[1], "title": result[2], "span": span };
+                firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').update(updates);
 
-                    for (var i = startIndex; i < startIndex + span; i++) {
-                        updates[i.toString()] = change;
-                    }
-
-                    firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').update(updates);
-
-                });
-            }
+            });
         },
     },
 

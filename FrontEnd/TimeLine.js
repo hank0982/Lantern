@@ -62,51 +62,15 @@ class TimeLine extends React.Component {
   componentDidMount(){
 
     var firebase = this.props.screenProps.firebase;
-    timelineAPI.insertActivities(firebase, '20171023', 'activities/movies/fightClub', 3).then(function(){
-      timelineAPI.insertActivities(firebase, '20171023', 'activities/movies/suicideSquad', 8).then(function(){
-        
-            timelineAPI.returnActivities(firebase, '20171023').then(
-              function(snap){
-                var category = snap["4"]['category'];
-                var span = snap["4"]['span'];
-                var objTitle = snap["4"]['title'];
-        
-                var data = {};
-        
-               // fightClub: { title: 'Fight Club', category: 'Drama', description: "jeijewrkeewrewrewrewrewrewrwr", rating: "R-18"}
-                var i = 0;
-                console.log(snap);
-                console.log("ewjrkewhrjkewhrlewkgrjewlhrjwelhrlwjer hahahahaha");
-                ActivityAPI.lookupActivity(firebase, category, objTitle).then(function(snapshot){
-                  console.log(snapshot);
-                });
-                // while(i < Object.keys(snap).length){
-                //   category = snap[i.toString()]['category'];
-                //   span = snap[i.toString()]['span'];
-                //   objTitle = snap[i.toString()]['title'];
-        
-                //   ActivityAPI.lookupActivity(firebaseHi, category, objTitle).then(function(snapshot){
-                //     var title = snapshot.title;
-                //     var description = snapshot.description;
-                //     var rating = snapshot.rating;
-        
-                //     var obj = {};
-                //     obj["title"] = title;
-                //     obj["category"] = category;
-                //     obj["description"] = description;
-                //     obj["rating"] = rating;
-                //     obj["span"] = span;
-        
-                //     data[objTitle] = obj;
-                //     i++;
-        
-                //   });
-                //} // end of for loop
-        
-                //console.log(data);
-                //}
-          }
-        );
+    timelineAPI.insertActivities(firebase, '20171023', 'activities/movies/suicideSquad', 0).then(function(){
+      timelineAPI.insertActivities(firebase, '20171023', 'activities/magazines/emporium0717', 5).then(function(){
+        timelineAPI.insertActivities(firebase, '20171023', 'activities/music/afterHours', 6).then(function(){
+          timelineAPI.insertActivities(firebase, '20171023', 'activities/television/gravityFalls', 7).then(function(){
+            timelineAPI.returnActivities(firebase, '20171023').then(function(snap){
+              
+            );
+          });
+        });
       });
     }); 
   }
