@@ -59,7 +59,7 @@ module.exports = {
             }
 
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
-                activities: activityArr
+                activities: {"asd": "hello"}
             });
         },
 
