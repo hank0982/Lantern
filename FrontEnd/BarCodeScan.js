@@ -42,6 +42,8 @@ export default class BarCodeScan extends Component {
         name : name
       }
       timelineAPI.addActivityArray(this.props.screenProps.firebase, '20171023', 10*60);
+      var userId = this.props.screenProps.firebase.auth().currentUser.uid;
+      timelineAPI.insertActivities(this.props.screenProps.firebase, '20171023', 'activities/movies/fightClub');
       this.props.navigation.navigate('TimeLine');
     }
   };

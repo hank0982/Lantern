@@ -31,7 +31,7 @@ module.exports = {
         loginWithEmail(firebase, email, password) {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(function(firebaseUser) {
-                    console.log('sucess');
+                    console.log('success');
                     return firebase.auth().currentUser;
                 })
                 .catch(function(error) {
@@ -59,19 +59,27 @@ module.exports = {
             }
 
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
-                activities: {"asd": "hello"}
+                activities: activityArr
             });
         },
 
-
+        // path is the path to 
         insertActivities(firebase, flightDate, path) {
             var userId = firebase.auth().currentUser.uid;
-            firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
-                var index = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+            firebase.database().ref(path).once('value').then(function(snapshot) {
+                var length = (snapshot.val() && snapshot.val().duration) || 'ERROR';
+                if (length == 'ERROR'){
+                    console.log('ERROR');
+                }
+                else {
+                    var span = Math.round(length / 30);
+                }
+                return span;
             });
+            console.log('we are in the main function');
+            console.log(span);
+
         },
-
-
 
         addFlightInfo(firebase, flightDate) {
             var userId = firebase.auth().currentUser.uid;
