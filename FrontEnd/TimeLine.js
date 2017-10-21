@@ -4,7 +4,7 @@ import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
 
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
-import {timelineAPI, ActivitiesAPI} from '../API/APIs';
+import {timelineAPI, ActivitiesAPI, LoginAPI} from '../API/APIs';
 let data = {
   hello: { text: 'world', padding: 2},
   how: { text: 'are you',padding: 2 },
@@ -30,10 +30,14 @@ let order = Object.keys(data) //Array of keys
 class RowComponent extends React.Component {
   render() {
     return (
-      
+        <View style={{flexDirection: 'row', width: '100%'}}>
+        <View style={{width: '10%'}}>
+          <Text> hi </Text>
+        </View>
         <TouchableHighlight
           underlayColor={'#eee'}
           style={{
+            width: '90%',
             padding: 25,
             backgroundColor: '#F8F8F8',
             borderBottomWidth: 1,
@@ -41,10 +45,11 @@ class RowComponent extends React.Component {
           }}
           {...this.props.sortHandlers}
         >
-          
+        <View >
           <Text style={{padding: this.props.data.padding}}>{this.props.data.text}</Text>
+        </View>
         </TouchableHighlight>
-        
+        </View>
     )
   }
 }
@@ -62,11 +67,8 @@ class TimeLine extends React.Component {
   }
   render() {
     return (
-      <View style={{flexDirection: 'row', height: '100%'}}>
-        <View style={{width: '10%'}}>
-          <Text > google </Text>
-        </View>
-        <View style={{width: '90%'}}>
+      <View style={{ height: '100%', width:'100%'}}>
+
       <SortableListView
         style={{ flex: 1 }}
         data={data}
@@ -78,7 +80,7 @@ class TimeLine extends React.Component {
         renderRow={row => <RowComponent data={row} />}
       />
       </View>
-      </View>
+
     )
   }
 }

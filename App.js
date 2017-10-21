@@ -12,7 +12,8 @@
     Home : { screen: Login },
     BarCodeScan : {screen: BarCodeScan},
     RegPre : {screen: RegPre},
-    TimeLine : {screen : TimeLine}
+    TimeLine : {screen : TimeLine},
+
   });
   export default class App extends React.Component {
     constructor(){
