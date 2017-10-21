@@ -54,10 +54,10 @@ module.exports = {
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
                 activities: activityArr
             });
-        }//,
-        //insertActivities(firebase, ){
-
-        //}
+        },
+        insertActivities(firebase, userId, activityId){
+            
+        }
     },
 
     storeFlightAPI:{
