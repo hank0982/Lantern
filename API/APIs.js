@@ -55,7 +55,7 @@ module.exports = {
 
             var activityArr = {};
             for (var i = 0; i < sliceNum; i++) {
-                activityArr[i.toString()] = '0';
+                activityArr[i.toString()] = "empty";
             }
 
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
@@ -90,8 +90,8 @@ module.exports = {
                 
             });
         },
-
     },
+
     ActivityAPI: {
         lookupActivity(firebase, category, title) {
             var userId = firebase.auth().currentUser.uid;
