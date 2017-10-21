@@ -1,0 +1,8 @@
+module.exports = {
+    apiKey: "AIzaSyD1Eou2m_KAF558nOwC8F9DgAImkXy-tsA",
+    authDomain: "cathyhack-3a661.firebaseapp.com",
+    databaseURL: "https://cathyhack-3a661.firebaseio.com",
+    projectId: "cathyhack-3a661",
+    storageBucket: "cathyhack-3a661.appspot.com",
+    messagingSenderId: "28063811160"
+}

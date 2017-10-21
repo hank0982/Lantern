@@ -14,14 +14,7 @@ export default class Login extends React.Component {
       }
     }
     // Config header check
-    static navigationOptions = {
-        title: 'Login',
-        headerTintColor: "#FAA916", 
-        headerStyle: {
-            backgroundColor: 'black',
-            elevation: null
-        }       
-    };
+    static navigationOptions = LoginStyle.navigationOptions;
     onLoginPress(){
         LoginAPI.loginWithEmail(this.props.screenProps.firebase, this.state.username, this.state.password);
     }
