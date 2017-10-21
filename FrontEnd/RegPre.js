@@ -20,7 +20,7 @@ export default class Login extends React.Component {
     render() {
       const { navigate } = this.props.navigation;
       return (
-        <View style={RegisterStyle.container}>
+        <View style={RegisterStyle.stylesheet.container}>
             <View style = {{width: '70%'}}>
             <TextField baseColor={RegisterStyle.textInput.baseColor} tintColor={RegisterStyle.textInput.tintColor} label='Username' textColor = {RegisterStyle.textInput.textColor} onChangeText = {(username) => this.setState({username: username})}/>
             <TextField baseColor={RegisterStyle.textInput.baseColor} tintColor={RegisterStyle.textInput.tintColor} label='Password' secureTextEntry={true} textColor = {RegisterStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
