@@ -4,7 +4,7 @@ import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
 
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
-import {timelineAPI, ActivitiesAPI, LoginAPI} from '../API/APIs';
+import {timelineAPI, ActivityAPI, LoginAPI} from '../API/APIs';
 let data = {
   hello: { text: 'world', padding: 2},
   how: { text: 'are you',padding: 2 },
@@ -58,13 +58,53 @@ class TimeLine extends React.Component {
   constructor(){
     super();
   }
+
   componentDidMount(){
-    timelineAPI.returnActivities(this.props.screenProps.firebase, '20171023').then(
-      function(snap){
-        console.log(snap);
+    
+        var firebaseHi = this.props.screenProps.firebase;
+    
+        timelineAPI.returnActivities(firebaseHi, '20171023').then(
+          function(snap){
+            var category;
+            var span;
+            var objTitle;
+    
+            var data = {};
+    
+           // fightClub: { title: 'Fight Club', category: 'Drama', description: "jeijewrkeewrewrewrewrewrewrwr", rating: "R-18"}
+            var i = 0;
+            console.log(snap);
+            // while(i < Object.keys(snap).length){
+            //   category = snap[i.toString()]['category'];
+            //   span = snap[i.toString()]['span'];
+            //   objTitle = snap[i.toString()]['title'];
+    
+            //   ActivityAPI.lookupActivity(firebaseHi, category, objTitle).then(function(snapshot){
+            //     var title = snapshot.title;
+            //     var description = snapshot.description;
+            //     var rating = snapshot.rating;
+    
+            //     var obj = {};
+            //     obj["title"] = title;
+            //     obj["category"] = category;
+            //     obj["description"] = description;
+            //     obj["rating"] = rating;
+            //     obj["span"] = span;
+    
+            //     data[objTitle] = obj;
+            //     i++;
+    
+            //   });
+            } // end of for loop
+    
+            console.log(data);
+    
+          });
       }
-    );
-  }
+    
+
+
+
   render() {
     return (
       <View style={{ height: '100%', width:'100%'}}>
