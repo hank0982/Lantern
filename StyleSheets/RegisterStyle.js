@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-loginStyleSheet = StyleSheet.create({
+registerStyleSheet = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
@@ -14,7 +14,7 @@ loginStyleSheet = StyleSheet.create({
     }
 });
 navigationOptions = {
-    title: 'Login',
+    title: 'Register',
     headerTintColor: "#FAA916",
     headerStyle: {
         backgroundColor: 'black',
@@ -22,4 +22,4 @@ navigationOptions = {
     }
 };
 textInput = { baseColor: '#FAA916', tintColor: '#FFFFFF', label: 'Username', textColor: '#FFFFFF' }
-module.exports = { stylesheet: loginStyleSheet, navigationOptions: navigationOptions };
+module.exports = { stylesheet: registerStyleSheet, navigationOptions: navigationOptions, textInput: textInput };

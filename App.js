@@ -13,8 +13,21 @@
     RegPre : {screen: RegPre}
   });
   export default class App extends React.Component {
+    constructor(){
+      super();
+      this.state = {
+          username: '',
+          password: '',
+          user: null
+      }
+    }
+    changeUser(user){
+      this.setState({
+        user: user
+      })
+    }
     render(){
-      return <Pages screenProps = {{firebase: firebase}}/>;
+      return <Pages screenProps = {{firebase: firebase, user: this.state.user, setUser: this.changeUser}}/>;
     }
   }
   
