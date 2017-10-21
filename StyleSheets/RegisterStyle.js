@@ -15,7 +15,7 @@ registerStyleSheet = StyleSheet.create({
 });
 navigationOptions = {
     title: 'Register',
-    headerTintColor: "#FAA916",
+    headerTintColor: "#016565",
     headerStyle: {
         backgroundColor: '#E9ECEB',
         elevation: null
