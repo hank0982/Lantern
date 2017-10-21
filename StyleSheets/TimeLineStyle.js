@@ -3,14 +3,30 @@ import { StyleSheet, Text, View } from 'react-native';
 TimeLineStyleSheet = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        padding: 5,
-        paddingTop: 15,
-        backgroundColor: '#E9ECEB',
+        padding: 20,
+        paddingTop: 65,
+        backgroundColor: 'white'
     },
-    texts: {
-        color: '#016565'
+    list: {
+        flex: 1,
+        marginTop: 20,
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    descriptionContainer: {
+        flexDirection: 'row',
+        paddingRight: 50
+    },
+    image: {
+        width: 50,
+        height: 50,
+        borderRadius: 25
+    },
+    textDescription: {
+        marginLeft: 10,
+        color: 'gray'
     }
 });
 navigationOptions = {
