@@ -62,10 +62,11 @@ module.exports = {
                 activities: activityArr
             });
         },
-        returnActivities(firebase, flightData) {
+        returnActivities(firebase, flightDate) {
             var userId = firebase.auth().currentUser.uid;
-            firebase.database().ref('users/' + userId + '/' + flightData + '/activities').once('value').then(function(snap) {
-                return snap;
+
+            return firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').once('value').then(function(snap) {
+                return snap.val();
             });
         },
         // path is the path to the exact activity (e.g. fight club)
@@ -101,15 +102,15 @@ module.exports = {
             var userId = firebase.auth().currentUser.uid;
             if (category && title) {
                 firebase.database().ref('activities/' + category + '/' + title).once('value').then(function(snap) {
-                    return snap;
+                    return snap.val();
                 });
             } else if (category) {
                 firebase.database().ref('activities/' + category).once('value').then(function(snap) {
-                    return snap;
+                    return snap.val();
                 })
             } else {
                 firebase.database().ref('activities/').once('value').then(function(snap) {
-                    return snap;
+                    return snap.val();
                 })
             }
         },

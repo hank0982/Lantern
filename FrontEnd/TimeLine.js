@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image ,TouchableHighlight} from 'react-native';
 import SortableListView from 'react-native-sortable-listview'
+import { StackNavigator } from 'react-navigation';
+
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
-import {TimeLineAPI, ActivitiesAPI} from '../API/APIs';
+import {timelineAPI, ActivitiesAPI} from '../API/APIs';
 let data = {
   hello: { text: 'world', padding: 2},
   how: { text: 'are you',padding: 2 },
@@ -48,10 +50,13 @@ class RowComponent extends React.Component {
 }
 
 class TimeLine extends React.Component {
+  constructor(){
+    super();
+  }
   componentDidMount(){
-    TimeLineAPI.returnActivities(this.props.screenProps.firebase, '20171023').then(
+    timelineAPI.returnActivities(this.props.screenProps.firebase, '20171023').then(
       function(snap){
-        
+        console.log(snap);
       }
     );
   }
