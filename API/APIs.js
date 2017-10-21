@@ -45,32 +45,30 @@ module.exports = {
 
     timelineAPI: {
         // duration unit is in minutes
-        addActivityArray(firebase, flightDate, duration){
+        addActivityArray(firebase, flightDate, duration) {
             var userId = firebase.auth().currentUser.uid;
             var sliceNum = Math.floor(duration / 30);
-            var activityArr = [];
+
+            var activityArr = {};
             for (var i = 0; i < sliceNum; i++) {
-                activityArr.push(null);
+                activityArr[i.toString()] = '0';
             }
-
-            var objArr = {};
-            for (var i = 0; i < activityArr.length; ++i)
-                objArr[i] = activityArr[i];
-   
+            console.log()
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
-                activities: objArr
+                activities: activityArr
             });
         },
-/*
-        insertActivities(firebase, flightDate, path){
-            var userId = firebase.auth().currentUser.uid;
-            var index = firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
-                var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-            });
-        },
-*/
 
-        addFlightInfo(firebase, flightDate){
+
+        insertActivities(firebase, flightDate, path) {
+            var userId = firebase.auth().currentUser.uid;
+            firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
+                var index = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+            });
+        },
+
+
+        addFlightInfo(firebase, flightDate) {
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref('users/' + userId + '/').set({
                 flightInfo: flightDate

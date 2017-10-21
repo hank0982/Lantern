@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Timeline from 'react-native-timeline-listview';
+import TimeLineStyle from '../StyleSheets/TimeLineStyle';
 export default class TimeLine extends React.Component {
     constructor() {
         super();
@@ -11,6 +12,11 @@ export default class TimeLine extends React.Component {
         ]
     }
     render() {
-        return ( < Timeline data = { this.data }/> );
+
+        return (
+        <View style={TimeLineStyle.stylesheet.container}>
+            <Timeline data = { this.data }/> 
+        </View>
+      );
     }
 }
