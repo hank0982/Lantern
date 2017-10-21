@@ -76,7 +76,7 @@ module.exports = {
                     var span = Math.round(length / 30);
                 }
 
-                firebase.database().ref().update(updates);
+                firebase.database().ref('users/' + userId + +'/' + flightDate).update();
 
                 for (var i = startIndex; i < startIndex + span; i++){
 
