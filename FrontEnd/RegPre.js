@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import RegisterStyle from '../StyleSheets/RegisterStyle';
 import Button from 'apsl-react-native-button';
 import { TextField } from 'react-native-material-textfield';
-import {LoginAPI} from '../API/APIs';
+import {RegisterAPI} from '../API/APIs';
 export default class Login extends React.Component {
     constructor(){
       super();

@@ -16,8 +16,6 @@
     constructor(){
       super();
       this.state = {
-          username: '',
-          password: '',
           user: null
       }
     }
@@ -27,7 +25,7 @@
       })
     }
     render(){
-      return <Pages screenProps = {{firebase: firebase, user: this.state.user, setUser: this.changeUser}}/>;
+      return <Pages screenProps = {{firebase: firebase, user: this.state.user, setUser: this.changeUser.bind(this)}}/>;
     }
   }
   
