@@ -1,10 +1,63 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image ,TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, Image ,TouchableHighlight,TouchableOpacity} from 'react-native';
 import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
-
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
-import {timelineAPI, ActivitiesAPI, LoginAPI} from '../API/APIs';
+import {timelineAPI, ActivityAPI, LoginAPI} from '../API/APIs';
+import ScrollingButtonMenu from 'react-native-scrolling-button-menu';
+import Modal from 'react-native-modal'
+import Button from 'apsl-react-native-button';
+import CarouselCard from 'react-native-card-carousel'
+const ENTRIES1 = [
+    {
+        title: 'Beautiful and dramatic Antelope Canyon',
+        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+        illustration: 'http://i.imgur.com/UYiroysl.jpg'
+    },
+    {
+        title: 'Earlier this morning, NYC',
+        subtitle: 'Lorem ipsum dolor sit amet',
+        illustration: 'http://i.imgur.com/UPrs1EWl.jpg'
+    },
+    {
+        title: 'White Pocket Sunset',
+        subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
+        illustration: 'http://i.imgur.com/MABUbpDl.jpg'
+    },
+    {
+        title: 'Acrocorinth, Greece',
+        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+        illustration: 'http://i.imgur.com/KZsmUi2l.jpg'
+    },
+    {
+        title: 'The lone tree, majestic landscape of New Zealand',
+        subtitle: 'Lorem ipsum dolor sit amet',
+        illustration: 'http://i.imgur.com/2nCt3Sbl.jpg'
+    },
+    {
+        title: 'Middle Earth, Germany',
+        subtitle: 'Lorem ipsum dolor sit amet',
+        illustration: 'http://i.imgur.com/lceHsT6l.jpg'
+    }
+];
+var modal = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 22,
+    justifyContent: 'center',
+    borderRadius: 4,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
+
+  },
+  bottomModal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+});
 let data = {
   hello: { text: 'world', padding: 2},
   how: { text: 'are you',padding: 2 },
@@ -16,18 +69,83 @@ let data = {
   bb: { text: 'bb' ,padding: 2},
   cc: { text: 'cc',padding: 2 },
   dd: { text: 'dd',padding: 2 },
-  ee: { text: 'ee' ,padding: 2},
-  ff: { text: 'ff' ,padding: 2},
-  gg: { text: 'gg' ,padding: 2},
-  hh: { text: 'hh',padding: 2 },
-  ii: { text: 'ii',padding: 2 },
-  jj: { text: 'jj',padding: 2 },
-  kk: { text: 'kk' ,padding: 2},
+  
 }
+const menus = [
+    {
+       text:'Movies',
+       textColor:'#FFFFFF',
+       backgroundColor:'#388E3C',
+       borderColor:'#388E3C',
+    },
+    {
+       text:'Games',
+       textColor:'#FFFFFF',
+       backgroundColor:'#388E3C',
+       borderColor:'#388E3C',
+    },
+    {
+       text:'Music',
+       textColor:'#FFFFFF',
+       backgroundColor:'#388E3C',
+       borderColor:'#388E3C',
+    },
+    {
+       text:'Television',
+       textColor:'#FFFFFF',
+       backgroundColor:'#388E3C',
+       borderColor:'#388E3C',
+    },
+    {
+       text:'Shopping',
+       textColor:'#FFFFFF',
+       backgroundColor:'#388E3C',
+       borderColor:'#388E3C',
+    },
+    {
+       text:'Magazine',
+       textColor:'#FFFFFF',
+       backgroundColor:'#388E3C',
+       borderColor:'#388E3C',
+    }
 
+];
 let order = Object.keys(data) //Array of keys
 
+class ImageCon extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return <Image
+                style={{ width: 240, height: 50}}
+                source={require('../Assets/Pictures/NewLogo.png')}
+            />
+  }
+}
 class RowComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalVisible: false,
+      title: 'Movies',
+    }
+  }
+  onPressButtonMenu(menu) {
+    this.setState({
+      title: menu.text
+    })
+  }
+  _showModal = () => this.setState({ isModalVisible: true })
+
+  _hideModal = () => this.setState({ isModalVisible: false })
+  _renderItem ({item, index}) {
+        return (
+            <View style={styles.slide}>
+                <Text style={styles.title}>{ item.title }</Text>
+            </View>
+        );
+    }
   render() {
     return (
         <View style={{flexDirection: 'row', width: '100%'}}>
@@ -47,8 +165,34 @@ class RowComponent extends React.Component {
         >
         <View >
           <Text style={{padding: this.props.data.padding}}>{this.props.data.text}</Text>
+          <Button onPress={this._showModal} style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}> Edit </Button>
         </View>
         </TouchableHighlight>
+        <View style = {modal.container}>
+          <Modal isVisible={this.state.isModalVisible} >
+          <View style={modal.modalContent}>
+          <View style = {{height:'10%'}}>
+              <ScrollingButtonMenu 
+              items={menus}
+              style={{padding:2}}
+              onPress={this.onPressButtonMenu.bind(this)}
+            /></View>
+            
+            <Text> {this.state.title} </Text>   
+            <CarouselCard
+              height={250}
+              autoplay
+              interval={4000}
+              data={[1,2,3,4]}
+              onPress={item => {}}
+              contentRender={item => <ImageCon item = {item} />}
+            />
+            <View style = {{paddingTop:10}}>
+            <Button title = "Close" onPress={this._hideModal} style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}>Close</Button>
+            </View>
+            </View>
+          </Modal>
+        </View>
         </View>
     )
   }
@@ -57,6 +201,8 @@ class RowComponent extends React.Component {
 class TimeLine extends React.Component {
   constructor(){
     super();
+    // this.onPressButtonMenu = {};
+    // this.showDialog = {};
   }
   componentDidMount(){
     timelineAPI.returnActivities(this.props.screenProps.firebase, '20171023').then(
@@ -65,6 +211,7 @@ class TimeLine extends React.Component {
       }
     );
   }
+  
   render() {
     return (
       <View style={{ height: '100%', width:'100%'}}>
