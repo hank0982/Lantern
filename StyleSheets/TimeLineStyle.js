@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Constants, BarCodeScanner, Permissions } from 'expo';
+
 TimeLineStyleSheet = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        paddingTop: 65,
+        paddingTop: 20,
         backgroundColor: 'white'
     },
     list: {
@@ -30,7 +32,7 @@ TimeLineStyleSheet = StyleSheet.create({
     }
 });
 navigationOptions = {
-    title: 'Register',
+    title: 'TimeLine',
     headerTintColor: "#FAA916",
     headerStyle: {
         backgroundColor: '#E9ECEB',

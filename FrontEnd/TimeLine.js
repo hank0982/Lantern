@@ -43,6 +43,7 @@ export default class TimeLine extends React.Component {
     ]
     this.state = {selected: null}
   } 
+  static navigationOptions = TimeLineStyle.navigationOptions;
 
   onEventPress(data){
     this.setState({selected: data})
@@ -82,11 +83,11 @@ export default class TimeLine extends React.Component {
           circleSize={20}
           circleColor='rgba(0,0,0,0)'
           lineColor='rgb(45,156,219)'
-          timeContainerStyle={{minWidth:52, marginTop: -5}}
+          timeContainerStyle={{minWidth:52, marginTop: 0}}
           timeStyle={{textAlign: 'center', backgroundColor:'#ff9797', color:'white', padding:5, borderRadius:13}}
           descriptionStyle={{color:'gray'}}
           options={{
-            style:{paddingTop:5}
+            style:{paddingTop:0}
           }}
           innerCircle={'icon'}
           onEventPress={this.onEventPress}
