@@ -8,38 +8,7 @@ import ScrollingButtonMenu from 'react-native-scrolling-button-menu';
 import Modal from 'react-native-modal'
 import Button from 'apsl-react-native-button';
 import CarouselCard from 'react-native-card-carousel'
-const ENTRIES1 = [
-    {
-        title: 'Beautiful and dramatic Antelope Canyon',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'http://i.imgur.com/UYiroysl.jpg'
-    },
-    {
-        title: 'Earlier this morning, NYC',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/UPrs1EWl.jpg'
-    },
-    {
-        title: 'White Pocket Sunset',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-        illustration: 'http://i.imgur.com/MABUbpDl.jpg'
-    },
-    {
-        title: 'Acrocorinth, Greece',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'http://i.imgur.com/KZsmUi2l.jpg'
-    },
-    {
-        title: 'The lone tree, majestic landscape of New Zealand',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/2nCt3Sbl.jpg'
-    },
-    {
-        title: 'Middle Earth, Germany',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/lceHsT6l.jpg'
-    }
-];
+
 var modal = StyleSheet.create({
   container: {
     flex: 1,
@@ -129,6 +98,7 @@ class RowComponent extends React.Component {
     this.state = {
       isModalVisible: false,
       title: 'Movies',
+      onOff: '#caae03',
     }
   }
   onPressButtonMenu(menu) {
@@ -149,8 +119,7 @@ class RowComponent extends React.Component {
   render() {
     return (
         <View style={{flexDirection: 'row', width: '100%'}}>
-        <View style={{width: '10%'}}>
-          <Text> hi </Text>
+        <View style={{width: '10%', backgroundColor: this.state.onOff}}>
         </View>
         <TouchableHighlight
           underlayColor={'#eee'}
@@ -163,9 +132,9 @@ class RowComponent extends React.Component {
           }}
           {...this.props.sortHandlers}
         >
-        <View >
-          <Text style={{padding: this.props.data.padding}}>{this.props.data.text}</Text>
-          <Button onPress={this._showModal} style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}> Edit </Button>
+        <View style = {{flex:1,width: '100%', flexDirection:'row'}}>
+          <Text style = {{width: '70%'}}>{this.props.data.text}</Text>
+          <Button onPress={this._showModal} style={{width: '20%', paddingRight: 10,backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}> Edit </Button>
         </View>
         </TouchableHighlight>
         <View style = {modal.container}>
@@ -188,7 +157,7 @@ class RowComponent extends React.Component {
               contentRender={item => <ImageCon item = {item} />}
             />
             <View style = {{paddingTop:10}}>
-            <Button title = "Close" onPress={this._hideModal} style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}>Close</Button>
+            <Button title = "Close" onPress={this._hideModal} style={{ backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}>Close</Button>
             </View>
             </View>
           </Modal>
