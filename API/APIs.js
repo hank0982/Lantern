@@ -69,21 +69,40 @@ module.exports = {
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref(path).once('value').then(function(snapshot) {
                 var length = (snapshot.val() && snapshot.val().duration) || 'ERROR';
-                if (length == 'ERROR'){
+                if (length == 'ERROR') {
                     console.log('ERROR');
-                }
-                else {
+                } else {
                     var span = Math.round(length / 30);
                 }
 
                 firebase.database().ref('users/' + userId + +'/' + flightDate).update();
 
-                for (var i = startIndex; i < startIndex + span; i++){
+                for (var i = startIndex; i < startIndex + span; i++) {
 
                 }
 
 
             });
         },
+
     },
+    ActivityAPI: {
+        lookupActivity(firebase, category, title) {
+            var userId = firebase.auth().currentUser.uid;
+            if (category && title) {
+                firebase.database().ref('activities/' + category + '/' + title).once('value').then(function(snap) {
+                    return snap;
+                });
+            } else if (category) {
+                firebase.database().ref('activities/' + category).once('value').then(function(snap) {
+                    return snap;
+                })
+            } else {
+                firebase.database().ref('activities/').once('value').then(function(snap) {
+                    return snap;
+                })
+            }
+        },
+
+    }
 }
