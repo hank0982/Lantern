@@ -1,14 +1,17 @@
 module.exports = {
     SignUpAPI: {
-        signUpWithEmail(firebase, email, pwd) {
+        signUpWithEmail(firebase, email, pwd, repwd) {
             if (!email.include('@')) {
                 alert('Invalid Email!');
-                return;
+                return 0;
             }
-
-            firebase.auth().createUserWithEmailAndPassword(email, password)
+            if (pwd != repwd) {
+                alert('the first pwd and the second is different~');
+                return -1;
+            }
+            firebase.auth().createUserWithEmailAndPassword(email, pwd)
                 .then(function(user) {
-                    LoginAPI.loginWithEmail(firebase, email, passward);
+                    LoginAPI.loginWithEmail(firebase, email, pwd);
                 })
                 .catch(function(error) {
                     var errorCode = error.code;
@@ -21,6 +24,7 @@ module.exports = {
                     }
                     console.log(error);
                 });
+            return 0;
         }
     },
     LoginAPI: {
@@ -53,7 +57,7 @@ module.exports = {
             for (var i = 0; i < sliceNum; i++) {
                 activityArr[i.toString()] = '0';
             }
-            console.log()
+
             firebase.database().ref('users/' + userId + '/' + flightDate).set({
                 activities: activityArr
             });
@@ -66,6 +70,7 @@ module.exports = {
                 var index = (snapshot.val() && snapshot.val().username) || 'Anonymous';
             });
         },
+
 
 
         addFlightInfo(firebase, flightDate) {
