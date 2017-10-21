@@ -28,8 +28,8 @@ export default class Login extends React.Component {
                 style={{width: 250, height: 32}}
                 source={require('../Assets/Pictures/NLOGO2.png')}
             />
-                <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Username' textColor = {LoginStyle.textInput.textColor} onChangeText = {(username) => this.setState({username: username})}/>
-                <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Password' secureTextEntry={true} textColor = {LoginStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
+                <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Enter membership no. / username' textColor = {LoginStyle.textInput.textColor} onChangeText = {(username) => this.setState({username: username})}/>
+                <TextField baseColor={LoginStyle.textInput.baseColor} tintColor={LoginStyle.textInput.tintColor} label='Enter password' secureTextEntry={true} textColor = {LoginStyle.textInput.textColor}  onChangeText = {(password) => this.setState({password: password})}/>
                 <View style = {{paddingTop: 40}}>
                     <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>this.onLoginPress()}>
                         Log In
