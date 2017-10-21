@@ -53,6 +53,7 @@ export default class BarCodeScan extends Component {
   render() {
     return (
       <View style={BarCodeScanStyle.stylesheet.container}>
+        <Text> Please Scan your Ticket's Barcode </Text>
         {this.state.hasCameraPermission === null ?
           <Text>Requesting for camera permission</Text> :
           this.state.hasCameraPermission === false ?
