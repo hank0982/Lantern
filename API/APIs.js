@@ -45,27 +45,33 @@ module.exports = {
 
     timelineAPI: {
         // duration unit is in minutes
-        addActivityArray(firebase, userId, flightDate, duration){
+        addActivityArray(firebase, flightDate, duration){
+            var userId = firebase.auth().currentUser.uid;
             var sliceNum = Math.floor(duration / 30);
             var activityArr = [];
             for (var i = 0; i < sliceNum; i++) {
                 activityArr.push(null);
             }
 
-            firebase.database().ref('users/' + userId + '/' + flightDate).set({
+            firebase.database().ref('/users/' + userId + '/' + flightDate).set({
                 activities: activityArr
             });
         },
-        insertActivities(firebase, userId, activityId){
+        /*
+        insertActivities(firebase, flightDate, path){
+            var userId = firebase.auth().currentUser.uid;
+            return firebase.database().ref(path + '/duration').once('value').then(function(snapshot) {
+                var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+            )};
             
-        }
-    },
+        },
+        */
 
-    storeFlightAPI:{
-        addFlightInfo(firebase, userId, flightDate){
-            firebase.database().ref('users/' + userId + '/').set({
+        addFlightInfo(firebase, flightDate){
+            var userId = firebase.auth().currentUser.uid;
+            firebase.database().ref('/users/' + userId + '/').set({
                 flightInfo: flightDate
             });
         }
-    }
+    },
 }
