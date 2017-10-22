@@ -1,17 +1,10 @@
 module.exports = {
     SignUpAPI: {
         signUpWithEmail(firebase, email, pwd, repwd) {
-            if (!email.include('@')) {
-                alert('Invalid Email!');
-                return 0;
-            }
-            if (pwd != repwd) {
-                alert('the first pwd and the second is different~');
-                return -1;
-            }
             firebase.auth().createUserWithEmailAndPassword(email, pwd)
                 .then(function(user) {
                     LoginAPI.loginWithEmail(firebase, email, pwd);
+                    return 0;
                 })
                 .catch(function(error) {
                     var errorCode = error.code;
@@ -23,8 +16,8 @@ module.exports = {
                         alert(errorMessage);
                     }
                     console.log(error);
+                    return -1;
                 });
-            return 0;
         }
     },
     LoginAPI: {
@@ -43,6 +36,7 @@ module.exports = {
                         alert(errorMessage);
                     }
                     alert(error);
+                    return -1;
                 });
         }
     },
