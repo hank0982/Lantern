@@ -128,8 +128,8 @@ class RowComponent extends React.Component {
     }
   render() {
     return (
-        <View style={{flexDirection: 'row', width: '100%'}}
-        <View style={{height: (this.props.data.padding*20).toString()+'%',width: '10%', backgroundColor: this.state.onOff}}>
+        <View style={{flexDirection: 'row', width: '100%'}}>
+        <View style={{width: '10%', backgroundColor: this.state.onOff}}>
         </View>
         <TouchableHighlight
           underlayColor={'#eee'}
@@ -139,6 +139,7 @@ class RowComponent extends React.Component {
             backgroundColor: '#F8F8F8',
             borderBottomWidth: 1,
             borderColor: '#eee',
+            height: (this.props.data.padding*20).toString()+'%'
           }}
           {...this.props.sortHandlers}
         >
