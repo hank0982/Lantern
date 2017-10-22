@@ -263,6 +263,7 @@ class TimeLine extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    var OriOrder = order.slice();
     return (
       <View style={{ height: '100%', width:'100%'}}>
 
@@ -271,7 +272,15 @@ class TimeLine extends React.Component {
         data={data}
         order={order}
         onRowMoved={e => {
-          order.splice (e.to, 0, order.splice(e.from, 1)[0])
+          order.splice(e.to, 0, order.splice(e.from, 1)[0])
+          var text1 = data[OriOrder[e.to]]["text"];
+          var pad1 = data[OriOrder[e.to]]["padding"];
+          data[order[e.to]]["text"] = text1;
+          data[order[e.to]]["padding"] = pad1;
+
+          data[order[5]]["text"] = "12:00";
+          data[order[6]]["text"] = "12:30";
+
           this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
