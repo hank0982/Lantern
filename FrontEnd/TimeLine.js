@@ -28,26 +28,26 @@ var modal = StyleSheet.create({
   },
 });
 let data = {
-  hello: { text: '9:30', padding: 2},
-  how: { text: '10:00',padding: 2 },
+  hello: { text: '9:30', padding: 1},
+  how: { text: '10:00',padding: 1 },
   test: { text: '10:30',padding: 2 },
-  this: { text: '11:00',padding: 100 },
-  a: { text: '11:30',padding: 2 },
-  real: { text: '11:00' ,padding: 2},
-  drag: { text: '11:30' ,padding: 2},
-  bb: { text: '12:00' ,padding: 2},
-  cc: { text: '12:30',padding: 2 },
-  ee: { text: '13:00',padding: 2 },
-  ss: { text: '13:30',padding: 2 },
-  gg: { text: '14:00',padding: 2 },
-  asd: { text: '14:30',padding: 2 },
-  qwe: { text: '15:00',padding: 2 },
-  zxcv: { text: '15:30',padding: 2 },
-  asdf: { text: '16:00',padding: 2 },
-  qwer: { text: '16:30',padding: 2 },
-  fds: { text: '17:00',padding: 2 },
-  sda: { text: '17:30',padding: 2 },
-  gfsd: { text: '18:00',padding: 2 },
+  this: { text: '11:00',padding: 1 },
+  a: { text: '11:30',padding: 1 },
+  real: { text: '12:00' ,padding: 1},
+  drag: { text: '12:30' ,padding: 1},
+  bb: { text: '13:00' ,padding: 1},
+  cc: { text: '13:30',padding: 1 },
+  ee: { text: '14:00',padding: 1 },
+  ss: { text: '14:30',padding: 1 },
+  gg: { text: '15:00',padding: 1 },
+  asd: { text: '15:30',padding: 1 },
+  qwe: { text: '16:00',padding: 1 },
+  zxcv: { text: '16:30',padding: 1 },
+  asdf: { text: '17:00',padding: 1 },
+  qwer: { text: '17:30',padding: 1 },
+  fds: { text: '18:00',padding: 1 },
+  sda: { text: '18:30',padding: 1 },
+  gfsd: { text: '19:00',padding: 1 },
 
 }
 const menus = [
@@ -128,8 +128,8 @@ class RowComponent extends React.Component {
     }
   render() {
     return (
-        <View style={{flexDirection: 'row', width: '100%'}}>
-        <View style={{width: '10%', backgroundColor: this.state.onOff}}>
+        <View style={{flexDirection: 'row', width: '100%'}}
+        <View style={{height: (this.props.data.padding*20).toString()+'%',width: '10%', backgroundColor: this.state.onOff}}>
         </View>
         <TouchableHighlight
           underlayColor={'#eee'}
@@ -200,7 +200,7 @@ class TimeLine extends React.Component {
         data={data}
         order={order}
         onRowMoved={e => {
-          order.splice(e.to, 0, order.splice(e.from, 1)[0])
+          order.splice (e.to, 0, order.splice(e.from, 1)[0])
           this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
