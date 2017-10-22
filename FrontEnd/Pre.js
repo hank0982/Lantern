@@ -44,7 +44,7 @@ export default class Pre extends React.Component {
               />
               </View>
               <View style={{width:'90%', paddingTop:30}}>
-                <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>this.onSubmitPress()}>
+                <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>navigate('BarCodeScan')}>
                   Submit
                 </Button>
               </View>

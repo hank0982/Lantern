@@ -15,9 +15,7 @@ export default class Login extends React.Component {
       }
     }
     onSubmitPress(){
-          RegisterAPI.signUpWithEmail(this.props.screenProps.firebase, this.state.username, this.state.password, this.state.password).then(function(success){
-            this.props.navigation.navigate('Pre');
-          });
+          this.props.navigation.navigate('Pre');
     }
     static navigationOptions = RegisterStyle.navigationOptions;
     render() {
