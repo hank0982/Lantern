@@ -99,12 +99,67 @@ class ImageCon extends React.Component{
   }
   static navigationOptions = TimeLineStyle.navigationOptions;
   render(){
-    return <Image
-                style={{ width: 240, height: 50}}
-                source={require('../Assets/Pictures/NewLogo.png')}
-            />
-  }
-}
+    if(this.props.cata == 'Movies'){
+      if(this.props.item % 2 == 1){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Movies/fightClub.jpg')}
+              />
+      }else if (this.props.item % 2 == 0){
+        return <Image
+                    style={{ width: 240, height: 250}}
+                    source={require('../Assets/Movies/suicideSquad.jpg')}
+                />
+      }
+    }else if(this.props.cata == 'Music'){
+      if(this.props.item % 2 == 1){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Music/AMW.jpg')}
+              />
+      }}else if (this.props.item % 2 == 0){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Music/jazz.jpg')}
+              />
+    }else if(this.props.cata == 'Games'){
+      if(this.props.item % 2 == 1){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Games/hangman.jpg')}
+              />
+      }else if (this.props.item % 2 == 0){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Games/tetrisBattle.jpg')}
+              />
+    }
+    }else if(this.props.cata == 'Television'){
+      if(this.props.item % 2 == 1){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/TV/gravityFalls.jpg')}
+              />
+      }else if (this.props.item % 2 == 0){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/TV/obit.jpg')}
+              />
+    }
+    }else if(this.props.cata == 'Magazines'){
+      if(this.props.item % 2 == 1){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Magazines/discovery0917.jpg')}
+              />
+      }else if (this.props.item % 2 == 0){
+        return <Image
+                style={{ width: 240, height: 250}}
+                source={require('../Assets/Magazines/emporium0717.jpg')}
+              />
+    }
+    }
+}}
 class RowComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -168,7 +223,7 @@ class RowComponent extends React.Component {
               interval={4000}
               data={[1,2,3,4]}
               onPress={item => {}}
-              contentRender={item => <ImageCon item = {item} />}
+              contentRender={item => <ImageCon item = {item} cata = {this.state.title}/>}
             />
             <View style = {{paddingTop:10}}>
             <Button title = "Close" onPress={this._hideModal} style={{ backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}}>Close</Button>
