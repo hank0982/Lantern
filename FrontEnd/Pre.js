@@ -5,9 +5,6 @@ import PreferenceStyle from '../StyleSheets/PreferenceStyle';
 import Button from 'apsl-react-native-button';
 import { TextField } from 'react-native-material-textfield';
 import Slider from 'react-native-slider';
-import Login from './Login';
-import {LoginAPI} from '../API/APIs';
-
 export default class Pre extends React.Component {
     constructor(){
       super();
@@ -16,10 +13,7 @@ export default class Pre extends React.Component {
         sleep:22,
       }
     }
-    onLoginPress(){
-        LoginAPI.loginWithEmail(this.props.screenProps.firebase, '123@gmail.com', '123123');
-        this.props.navigation.navigate('BarCodeScan');
-    }
+
     static navigationOptions = PreferenceStyle.navigationOptions;
     render() {
       const { navigate } = this.props.navigation;
@@ -45,13 +39,12 @@ export default class Pre extends React.Component {
                   value={22}
                   step={1}
                   maximumValue={24}
-                  
                   minimumValue={18}
                   onValueChange={(value) => this.setState({sleep: value})}
               />
               </View>
               <View style={{width:'90%', paddingTop:30}}>
-                <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>this.onLoginPress()}>
+                <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>navigate('BarCodeScan')}>
                   Submit
                 </Button>
               </View>
