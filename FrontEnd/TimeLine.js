@@ -54,37 +54,37 @@ const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     }
 
@@ -129,7 +129,6 @@ class RowComponent extends React.Component {
             </View>
         );
     }
-  static navigationOptions = TimeLineStyle.navigationOptions;
   render() {
     return (
         <View style={{flexDirection: 'row', width: '100%'}}>
@@ -264,7 +263,9 @@ class TimeLine extends React.Component {
       });
     });
   }
+  static navigationOptions = TimeLineStyle.navigationOptions;
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={{ height: '100%', width:'100%'}}>
 
