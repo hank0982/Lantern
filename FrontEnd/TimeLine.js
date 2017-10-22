@@ -91,12 +91,13 @@ const menus = [
 ];
 let order = Object.keys(data) //Array of keys
 
-static navigationOptions = TimeLineStyle.navigationOptions;
+
 
 class ImageCon extends React.Component{
   constructor(props){
     super(props);
   }
+  static navigationOptions = TimeLineStyle.navigationOptions;
   render(){
     return <Image
                 style={{ width: 240, height: 50}}
