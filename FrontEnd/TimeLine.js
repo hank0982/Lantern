@@ -4,6 +4,29 @@ import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
 import {timelineAPI, ActivityAPI, LoginAPI} from '../API/APIs';
+import ScrollingButtonMenu from 'react-native-scrolling-button-menu';
+import Modal from 'react-native-modal'
+import Button from 'apsl-react-native-button';
+import CarouselCard from 'react-native-card-carousel'
+
+var modal = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 22,
+    justifyContent: 'center',
+    borderRadius: 4,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
+
+  },
+  bottomModal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+});
 let data = {
   hello: { text: '9:30', padding: 1},
   how: { text: '10:00',padding: 1 },
