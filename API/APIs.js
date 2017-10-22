@@ -67,7 +67,7 @@ module.exports = {
         // startIndex is an integer
         insertActivities(firebase, flightDate, path, startIndex) {
             var userId = firebase.auth().currentUser.uid;
-            firebase.database().ref(path).once('value').then(function(snapshot) {
+            return firebase.database().ref(path).once('value').then(function(snapshot) {
                 var length = (snapshot.val() && snapshot.val().duration) || 'DURATION ERROR';
                 if (length == 'DURATION ERROR') {
                     console.log(length);
@@ -89,25 +89,58 @@ module.exports = {
 
             });
         },
+        insertStatic(firebase, flightDate, acti, startIndex, duration) {
+            var userId = firebase.auth().currentUser.uid;
+            // this first firebase function is for self-reference only
+            return firebase.database().ref('users/' + userId + '/' + flightDate + '/activities/0').once('value').then(function(snapshot) {
+                
+                if (acti == "food"){
+                    var index = startIndex.toString();
+                    var obj = { "category": "food", "title": "Light On: Food", "span": "1"};
+                    var updates = {};
+                    updates[index] = obj;
+                    firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').update(updates);
+                }
+                else {
+                    var updates = {};
+                    var obj = { "category": "sleep", "title": "Light Off", "span": duration.toString()};
+                    for (var i = startIndex; i < startIndex + duration; i++){
+                        updates[i.toString()] = obj;
+                    }
+                    firebase.database().ref('users/' + userId + '/' + flightDate + '/activities').update(updates);
+                }
+            });
+        },
     },
 
     ActivityAPI: {
         lookupActivity(firebase, category, title) {
             var userId = firebase.auth().currentUser.uid;
             if (category && title) {
-                firebase.database().ref('activities/' + category + '/' + title).once('value').then(function(snap) {
+                if (category == "food"){
+                    return firebase.database().ref('activities/').once('value').then(function(snap) {
+                        return '';
+                    });
+                }
+                else if (category == "sleep"){
+                    return firebase.database().ref('activities/').once('value').then(function(snap) {
+                        return '';
+                    });
+                }
+                else{
+                return firebase.database().ref('activities/' + category + '/' + title).once('value').then(function(snap) {
                     return snap.val();
                 });
+                }
             } else if (category) {
-                firebase.database().ref('activities/' + category).once('value').then(function(snap) {
+                return firebase.database().ref('activities/' + category).once('value').then(function(snap) {
                     return snap.val();
                 })
             } else {
-                firebase.database().ref('activities/').once('value').then(function(snap) {
+                return firebase.database().ref('activities/').once('value').then(function(snap) {
                     return snap.val();
                 })
             }
-        },
-
+        }
     }
 }

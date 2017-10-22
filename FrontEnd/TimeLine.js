@@ -4,6 +4,8 @@ import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
 import {timelineAPI, ActivityAPI, LoginAPI} from '../API/APIs';
+<<<<<<< HEAD
+=======
 import ScrollingButtonMenu from 'react-native-scrolling-button-menu';
 import Modal from 'react-native-modal'
 import Button from 'apsl-react-native-button';
@@ -27,74 +29,78 @@ var modal = StyleSheet.create({
     margin: 0,
   },
 });
+>>>>>>> e3bdf997fff26feab885de43c4b9d2d2c42fb3d4
 let data = {
-  hello: { text: '9:30', padding: 2},
-  how: { text: '10:00',padding: 2 },
+  hello: { text: '9:30', padding: 1},
+  how: { text: '10:00',padding: 1 },
   test: { text: '10:30',padding: 2 },
-  this: { text: '11:00',padding: 100 },
-  a: { text: '11:30',padding: 2 },
-  real: { text: '11:00' ,padding: 2},
-  drag: { text: '11:30' ,padding: 2},
-  bb: { text: '12:00' ,padding: 2},
-  cc: { text: '12:30',padding: 2 },
-  ee: { text: '13:00',padding: 2 },
-  ss: { text: '13:30',padding: 2 },
-  gg: { text: '14:00',padding: 2 },
-  asd: { text: '14:30',padding: 2 },
-  qwe: { text: '15:00',padding: 2 },
-  zxcv: { text: '15:30',padding: 2 },
-  asdf: { text: '16:00',padding: 2 },
-  qwer: { text: '16:30',padding: 2 },
-  fds: { text: '17:00',padding: 2 },
-  sda: { text: '17:30',padding: 2 },
-  gfsd: { text: '18:00',padding: 2 },
+  this: { text: '11:00',padding: 1 },
+  a: { text: '11:30',padding: 1 },
+  real: { text: '12:00' ,padding: 1},
+  drag: { text: '12:30' ,padding: 1},
+  bb: { text: '13:00' ,padding: 1},
+  cc: { text: '13:30',padding: 1 },
+  ee: { text: '14:00',padding: 1 },
+  ss: { text: '14:30',padding: 1 },
+  gg: { text: '15:00',padding: 1 },
+  asd: { text: '15:30',padding: 1 },
+  qwe: { text: '16:00',padding: 1 },
+  zxcv: { text: '16:30',padding: 1 },
+  asdf: { text: '17:00',padding: 1 },
+  qwer: { text: '17:30',padding: 1 },
+  fds: { text: '18:00',padding: 1 },
+  sda: { text: '18:30',padding: 1 },
+  gfsd: { text: '19:00',padding: 1 },
 
 }
 const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     }
 
 ];
 let order = Object.keys(data) //Array of keys
 
+
+
 class ImageCon extends React.Component{
   constructor(props){
     super(props);
   }
+  static navigationOptions = TimeLineStyle.navigationOptions;
   render(){
     return <Image
                 style={{ width: 240, height: 50}}
@@ -108,7 +114,7 @@ class RowComponent extends React.Component {
     this.state = {
       isModalVisible: false,
       title: 'Movies',
-      onOff: '#caae03',
+      onOff: '#016565',
     }
   }
   onPressButtonMenu(menu) {
@@ -136,9 +142,10 @@ class RowComponent extends React.Component {
           style={{
             width: '90%',
             padding: 25,
-            backgroundColor: '#F8F8F8',
+            backgroundColor: '#E9ECEB',
             borderBottomWidth: 1,
             borderColor: '#eee',
+            paddingBottom: (this.props.data.padding*20).toString()+'%',
           }}
           {...this.props.sortHandlers}
         >
@@ -183,14 +190,82 @@ class TimeLine extends React.Component {
     // this.onPressButtonMenu = {};
     // this.showDialog = {};
   }
+
   componentDidMount(){
-    timelineAPI.returnActivities(this.props.screenProps.firebase, '20171023').then(
-      function(snap){
-        console.log(snap);
-      }
-    );
+    var firebase = this.props.screenProps.firebase;
+    timelineAPI.insertActivities(firebase, '20171023', 'activities/movies/suicideSquad', 0).then(function(){
+      timelineAPI.insertStatic(firebase, '20171023', "food", 4, 1).then(function(){
+      timelineAPI.insertActivities(firebase, '20171023', 'activities/magazines/emporium0717', 5).then(function(){
+        timelineAPI.insertActivities(firebase, '20171023', 'activities/music/afterHours', 6).then(function(){
+          timelineAPI.insertActivities(firebase, '20171023', 'activities/television/gravityFalls', 7).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "sleep", 8, 5).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "food", 13, 1).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "sleep", 14, 5).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "food", 19, 1).then(function(){
+
+            timelineAPI.returnActivities(firebase, '20171023').then(function(snap){
+              var category;
+              var span;
+              var objTitle;
+              var dataa = {};
+              var len = Object.keys(snap).length;
+              var i = 0;
+              function loopfunc(func, i){
+                i++;
+                if (i<len){
+                func(i);
+                }
+                else if (i == len){
+                  console.log(dataa);
+                } 
+              }
+
+              function a(i){ActivityAPI.lookupActivity(firebase, category, objTitle).then(function(snapshot){
+                  category = snap[i.toString()]['category'];
+                  span = snap[i.toString()]['span'];
+                  objTitle = snap[i.toString()]['title'];
+                  if (category == "food"){
+                    dataa["lightOnFood"+i] = {"title": "Light On: Food", "span": "1"};
+                    console.log("food " + i);
+                  }
+                  else if (category == "sleep"){
+                    dataa["lightOff"+i] = {"title": "Light Off", "span": span.toString()};
+                    console.log("sleep " + i);
+                  }
+                  else{
+                  
+                  var title = snapshot.title;
+                  var description = snapshot.description;
+                  var rating = snapshot.rating;
+              
+                  var obj = {};
+                  obj["title"] = title;
+                  obj["category"] = category;
+                  obj["description"] = description;
+                  obj["rating"] = rating;
+                  obj["span"] = span;
+
+                  dataa[objTitle] = obj;
+                  console.log(title + " " + i);
+                  }
+                  loopfunc(a,i)
+                });
+              }
+              a(0);
+              //console.log(dataa);
+              
+            // end of for loop
+            });
+            });
+            });
+            });
+            });
+          });
+          });
+        });
+      });
+    });
   }
-  
   render() {
     return (
       <View style={{ height: '100%', width:'100%'}}>
@@ -200,7 +275,7 @@ class TimeLine extends React.Component {
         data={data}
         order={order}
         onRowMoved={e => {
-          order.splice(e.to, 0, order.splice(e.from, 1)[0])
+          order.splice (e.to, 0, order.splice(e.from, 1)[0])
           this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
