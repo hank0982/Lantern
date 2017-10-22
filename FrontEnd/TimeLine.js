@@ -189,19 +189,19 @@ class RowComponent extends React.Component {
       if(k == 'Not Yet Decided'){
         return <Image
                 onPress={this._showModal}
-                style={{ width: 50, height: 50}}
+                style={{ width: 70, height: 70}}
                 source={require('../Assets/Pictures/cathayLOGO.png')}
               />
       }else if(k == 'Flight Club'){
         return  <Image
                 onPress={this._showModal}
-                style={{ width: 50, height: 50}}
+                style={{ width: 70, height: 70}}
                 source={require('../Assets/Movies/fightClub.jpg')}
               />
       }else{
         return  <Image
                 onPress={this._showModal}
-                style={{ width: 50, height: 50}}
+                style={{ width: 70, height: 70}}
                 source={require('../Assets/Magazines/discovery0917.jpg')}
               />
       }
@@ -235,7 +235,9 @@ class RowComponent extends React.Component {
           {...this.props.sortHandlers}
         >
         <View style = {{flex:1,width: '100%', flexDirection:'row'}}>
-          <Text style = {{width: '40%', fontSize: 30, color: '#016565'}}>{this.props.data.text}</Text>
+          <Text style = {{width: '33%', fontSize: 30, color: '#016565'}}>{this.props.data.text}</Text>
+          <Text style = {{width: '25%', fontSize: 14, color: '#016565'}}>{((this.props.data.onOff == 0) ? 'Light Off' : 'Light On')}</Text>
+
           {this.renderSleeporButton(this.props.data.onOff)}
         </View>
         </TouchableHighlight>
