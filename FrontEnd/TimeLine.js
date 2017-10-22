@@ -54,47 +54,50 @@ const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#388E3C',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     }
 
 ];
 let order = Object.keys(data) //Array of keys
 
+
+
 class ImageCon extends React.Component{
   constructor(props){
     super(props);
   }
+  static navigationOptions = TimeLineStyle.navigationOptions;
   render(){
     return <Image
                 style={{ width: 240, height: 50}}
@@ -108,7 +111,7 @@ class RowComponent extends React.Component {
     this.state = {
       isModalVisible: false,
       title: 'Movies',
-      onOff: '#caae03',
+      onOff: '#016565',
     }
   }
   onPressButtonMenu(menu) {
@@ -136,7 +139,7 @@ class RowComponent extends React.Component {
           style={{
             width: '90%',
             padding: 25,
-            backgroundColor: '#F8F8F8',
+            backgroundColor: '#E9ECEB',
             borderBottomWidth: 1,
             borderColor: '#eee',
             paddingBottom: (this.props.data.padding*20).toString()+'%',
