@@ -4,7 +4,6 @@ import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
 import {timelineAPI, ActivityAPI, LoginAPI} from '../API/APIs';
-
 import ScrollingButtonMenu from 'react-native-scrolling-button-menu';
 import Modal from 'react-native-modal'
 import Button from 'apsl-react-native-button';
