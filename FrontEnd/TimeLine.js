@@ -60,19 +60,79 @@ class TimeLine extends React.Component {
   }
 
   componentDidMount(){
-
     var firebase = this.props.screenProps.firebase;
     timelineAPI.insertActivities(firebase, '20171023', 'activities/movies/suicideSquad', 0).then(function(){
+      timelineAPI.insertStatic(firebase, '20171023', "food", 4, 1).then(function(){
       timelineAPI.insertActivities(firebase, '20171023', 'activities/magazines/emporium0717', 5).then(function(){
         timelineAPI.insertActivities(firebase, '20171023', 'activities/music/afterHours', 6).then(function(){
           timelineAPI.insertActivities(firebase, '20171023', 'activities/television/gravityFalls', 7).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "sleep", 8, 5).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "food", 13, 1).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "sleep", 14, 5).then(function(){
+          timelineAPI.insertStatic(firebase, '20171023', "food", 19, 1).then(function(){
+
             timelineAPI.returnActivities(firebase, '20171023').then(function(snap){
+              var category;
+              var span;
+              var objTitle;
+              var dataa = {};
+              var len = Object.keys(snap).length;
+              var i = 0;
+              function loopfunc(func, i){
+                i++;
+                if (i<len){
+                func(i);
+                }
+                else if (i == len){
+                  console.log(dataa);
+                } 
+              }
+
+              function a(i){ActivityAPI.lookupActivity(firebase, category, objTitle).then(function(snapshot){
+                  category = snap[i.toString()]['category'];
+                  span = snap[i.toString()]['span'];
+                  objTitle = snap[i.toString()]['title'];
+                  if (category == "food"){
+                    dataa["lightOnFood"+i] = {"title": "Light On: Food", "span": "1"};
+                    console.log("food " + i);
+                  }
+                  else if (category == "sleep"){
+                    dataa["lightOff"+i] = {"title": "Light Off", "span": span.toString()};
+                    console.log("sleep " + i);
+                  }
+                  else{
+                  
+                  var title = snapshot.title;
+                  var description = snapshot.description;
+                  var rating = snapshot.rating;
               
-            );
+                  var obj = {};
+                  obj["title"] = title;
+                  obj["category"] = category;
+                  obj["description"] = description;
+                  obj["rating"] = rating;
+                  obj["span"] = span;
+
+                  dataa[objTitle] = obj;
+                  console.log(title + " " + i);
+                  }
+                  loopfunc(a,i)
+                });
+              }
+              a(0);
+              //console.log(dataa);
+              
+            // end of for loop
+            });
+            });
+            });
+            });
+            });
+          });
           });
         });
       });
-    }); 
+    });
   }
 
   render() {
