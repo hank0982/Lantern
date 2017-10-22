@@ -289,12 +289,7 @@ class TimeLine extends React.Component {
         data={data}
         order={order}
         onRowMoved={e => {
-          console.log(order);
-          console.log(e);
-          console.log("WHATEVER");
           order.splice (e.to, 0, order.splice(e.from, 1)[0])
-          console.log(order);
-          console.log(e)
           this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
