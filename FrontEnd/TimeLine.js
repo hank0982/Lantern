@@ -91,8 +91,6 @@ const menus = [
 ];
 let order = Object.keys(data) //Array of keys
 
-
-
 class ImageCon extends React.Component{
   constructor(props){
     super(props);
@@ -213,7 +211,7 @@ class TimeLine extends React.Component {
                 func(i);
                 }
                 else if (i == len){
-                  console.log(dataa);
+                  //console.log(dataa);
                 } 
               }
 
@@ -223,11 +221,9 @@ class TimeLine extends React.Component {
                   objTitle = snap[i.toString()]['title'];
                   if (category == "food"){
                     dataa["lightOnFood"+i] = {"title": "Light On: Food", "span": "1"};
-                    console.log("food " + i);
                   }
                   else if (category == "sleep"){
                     dataa["lightOff"+i] = {"title": "Light Off", "span": span.toString()};
-                    console.log("sleep " + i);
                   }
                   else{
                   
@@ -243,7 +239,6 @@ class TimeLine extends React.Component {
                   obj["span"] = span;
 
                   dataa[objTitle] = obj;
-                  console.log(title + " " + i);
                   }
                   loopfunc(a,i)
                 });
@@ -263,6 +258,28 @@ class TimeLine extends React.Component {
       });
     });
   }
+
+/*
+  onRowMoved (Function) 
+  
+  should return a function that is passed a single object when a row is dropped.
+  The object contains three properties from, to, and row.
+  from and to are the order indexes being requested to move.
+  row is all the info available about the row being dropped.
+
+  Object {
+  "data": Object {
+    "padding": 2,
+    "text": "10:30",
+  },
+  "index": "test",
+  "section": "s1",
+}
+
+
+  */
+
+
   render() {
     return (
       <View style={{ height: '100%', width:'100%'}}>
@@ -272,7 +289,12 @@ class TimeLine extends React.Component {
         data={data}
         order={order}
         onRowMoved={e => {
+          console.log(order);
+          console.log(e);
+          console.log("WHATEVER");
           order.splice (e.to, 0, order.splice(e.from, 1)[0])
+          console.log(order);
+          console.log(e)
           this.forceUpdate()
         }}
         renderRow={row => <RowComponent data={row} />}
