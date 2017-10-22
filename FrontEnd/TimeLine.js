@@ -4,8 +4,6 @@ import SortableListView from 'react-native-sortable-listview'
 import { StackNavigator } from 'react-navigation';
 import TimeLineStyle from '../StyleSheets/TimeLineStyle';
 import {timelineAPI, ActivityAPI, LoginAPI} from '../API/APIs';
-<<<<<<< HEAD
-=======
 import ScrollingButtonMenu from 'react-native-scrolling-button-menu';
 import Modal from 'react-native-modal'
 import Button from 'apsl-react-native-button';
@@ -29,7 +27,6 @@ var modal = StyleSheet.create({
     margin: 0,
   },
 });
->>>>>>> e3bdf997fff26feab885de43c4b9d2d2c42fb3d4
 let data = {
   hello: { text: '9:30', padding: 1},
   how: { text: '10:00',padding: 1 },
