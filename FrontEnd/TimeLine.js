@@ -122,7 +122,8 @@ class ImageCon extends React.Component{
                 style={{ width: 240, height: 250}}
                 source={require('../Assets/Music/jazz.jpg')}
               />
-    }}else if(this.props.cata == 'Games'){
+      }
+      }else if(this.props.cata == 'Games'){
       if(this.props.item  == 'discovery0917'){
         return <Image
                 style={{ width: 240, height: 250}}
