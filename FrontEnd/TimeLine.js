@@ -139,7 +139,7 @@ class RowComponent extends React.Component {
             backgroundColor: '#F8F8F8',
             borderBottomWidth: 1,
             borderColor: '#eee',
-            height: (this.props.data.padding*20).toString()+'%'
+            paddingBottom: (this.props.data.padding*20).toString()+'%',
           }}
           {...this.props.sortHandlers}
         >
