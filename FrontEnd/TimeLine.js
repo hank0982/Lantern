@@ -54,42 +54,44 @@ const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#CAAE03',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#CAAE03',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#CAAE03',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#CAAE03',
-       borderColor:'#CAAE03',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#CAAE03',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#CAAE03',
-       borderColor:'#388E3C',
+       backgroundColor:'#FFE85A',
+       borderColor:'#000000',
     }
 
 ];
 let order = Object.keys(data) //Array of keys
+
+static navigationOptions = TimeLineStyle.navigationOptions;
 
 class ImageCon extends React.Component{
   constructor(props){
@@ -108,7 +110,7 @@ class RowComponent extends React.Component {
     this.state = {
       isModalVisible: false,
       title: 'Movies',
-      onOff: '#CAAE03',
+      onOff: '#016565',
     }
   }
   onPressButtonMenu(menu) {
@@ -136,7 +138,7 @@ class RowComponent extends React.Component {
           style={{
             width: '90%',
             padding: 25,
-            backgroundColor: '#F8F8F8',
+            backgroundColor: '#E9ECEB',
             borderBottomWidth: 1,
             borderColor: '#eee',
           }}
