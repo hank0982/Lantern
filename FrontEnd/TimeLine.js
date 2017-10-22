@@ -54,37 +54,37 @@ const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     }
 
@@ -97,7 +97,7 @@ class ImageCon extends React.Component{
   constructor(props){
     super(props);
   }
-  static navigationOptions = TimeLineStyle.navigationOptions;
+  
   render(){
     if(this.props.cata == 'Movies'){
       if(this.props.item % 2 == 1){
@@ -318,7 +318,9 @@ class TimeLine extends React.Component {
       });
     });
   }
+  static navigationOptions = TimeLineStyle.navigationOptions;
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={{ height: '100%', width:'100%'}}>
 
