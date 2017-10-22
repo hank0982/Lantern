@@ -54,37 +54,37 @@ const menus = [
     {
        text:'Movies',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Games',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Music',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Television',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Shopping',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     },
     {
        text:'Magazine',
        textColor:'#FFFFFF',
-       backgroundColor:'#FFE85A',
+       backgroundColor:'#016565',
        borderColor:'#000000',
     }
 
@@ -95,7 +95,7 @@ class ImageCon extends React.Component{
   constructor(props){
     super(props);
   }
-  static navigationOptions = TimeLineStyle.navigationOptions;
+  
   render(){
     return <Image
                 style={{ width: 240, height: 50}}
@@ -259,28 +259,10 @@ class TimeLine extends React.Component {
     });
   }
 
-/*
-  onRowMoved (Function) 
-  
-  should return a function that is passed a single object when a row is dropped.
-  The object contains three properties from, to, and row.
-  from and to are the order indexes being requested to move.
-  row is all the info available about the row being dropped.
-
-  Object {
-  "data": Object {
-    "padding": 2,
-    "text": "10:30",
-  },
-  "index": "test",
-  "section": "s1",
-}
-
-
-  */
 
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={{ height: '100%', width:'100%'}}>
 
