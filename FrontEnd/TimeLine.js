@@ -189,19 +189,19 @@ class RowComponent extends React.Component {
       if(k == 'Not Yet Decided'){
         return <Image
                 onPress={this._showModal}
-                style={{ width: 50, height: 50}}
+                style={{ width: 70, height: 70}}
                 source={require('../Assets/Pictures/cathayLOGO.png')}
               />
       }else if(k == 'Flight Club'){
         return  <Image
                 onPress={this._showModal}
-                style={{ width: 50, height: 50}}
+                style={{ width: 70, height: 70}}
                 source={require('../Assets/Movies/fightClub.jpg')}
               />
       }else{
         return  <Image
                 onPress={this._showModal}
-                style={{ width: 50, height: 50}}
+                style={{ width: 70, height: 70}}
                 source={require('../Assets/Magazines/discovery0917.jpg')}
               />
       }
@@ -217,7 +217,13 @@ class RowComponent extends React.Component {
           </View>
           </Button> : <Text style = {{width: '40%', fontSize: 30, color: '#016565'}}>Sleeping Time</Text>;
   }
+  fightClub(name){
+      
+      this.props.func(name);
+  }
   render() {
+    if(this.props.data.padding > 0){
+
     return (
         <View style={{flexDirection: 'row', width: '100%'}}>
         <View style={{width: '10%', backgroundColor: this.returnColor(this.props.data.onOff)}}>
@@ -235,7 +241,9 @@ class RowComponent extends React.Component {
           {...this.props.sortHandlers}
         >
         <View style = {{flex:1,width: '100%', flexDirection:'row'}}>
-          <Text style = {{width: '40%', fontSize: 30, color: '#016565'}}>{this.props.data.text}</Text>
+          <Text style = {{width: '33%', fontSize: 30, color: '#016565'}}>{this.props.data.text}</Text>
+          <Text style = {{width: '25%', fontSize: 14, color: '#016565'}}>{((this.props.data.onOff == 0) ? 'Light Off' : 'Light On')}</Text>
+
           {this.renderSleeporButton(this.props.data.onOff)}
         </View>
         </TouchableHighlight>
@@ -257,7 +265,7 @@ class RowComponent extends React.Component {
               data={['Flight Club','discovery0917']}
               onPress={item => {this.setState({
                 name: item
-              }); this._hideModal();}}
+              }); this._hideModal(); this.fightClub(item)}}
               contentRender={item => <ImageCon item = {item} cata = {this.state.title}/>}
             />
             <View style = {{paddingTop:10}}>
@@ -268,6 +276,9 @@ class RowComponent extends React.Component {
         </View>
         </View>
     )
+  }else{
+    return null
+  }
   }
 }
 
@@ -276,99 +287,40 @@ class TimeLine extends React.Component {
     super();
     // this.onPressButtonMenu = {};
     // this.showDialog = {};
+    this.state = {
+      flex: 1,
+      height: '100%'
+    }
   }
 
-  // componentDidMount(){
-  //   var firebase = this.props.screenProps.firebase;
-  //   timelineAPI.insertActivities(firebase, '20171023', 'activities/movies/suicideSquad', 0).then(function(){
-  //     timelineAPI.insertStatic(firebase, '20171023', "food", 4, 1).then(function(){
-  //     timelineAPI.insertActivities(firebase, '20171023', 'activities/magazines/emporium0717', 5).then(function(){
-  //       timelineAPI.insertActivities(firebase, '20171023', 'activities/music/afterHours', 6).then(function(){
-  //         timelineAPI.insertActivities(firebase, '20171023', 'activities/television/gravityFalls', 7).then(function(){
-  //         timelineAPI.insertStatic(firebase, '20171023', "sleep", 8, 5).then(function(){
-  //         timelineAPI.insertStatic(firebase, '20171023', "food", 13, 1).then(function(){
-  //         timelineAPI.insertStatic(firebase, '20171023', "sleep", 14, 5).then(function(){
-  //         timelineAPI.insertStatic(firebase, '20171023', "food", 19, 1).then(function(){
-
-  //           timelineAPI.returnActivities(firebase, '20171023').then(function(snap){
-  //             var category;
-  //             var span;
-  //             var objTitle;
-  //             var dataa = {};
-  //             var len = Object.keys(snap).length;
-  //             var i = 0;
-  //             function loopfunc(func, i){
-  //               i++;
-  //               if (i<len){
-  //               func(i);
-  //               }
-  //               else if (i == len){
-  //                 console.log(dataa);
-  //               } 
-  //             }
-
-  //             function a(i){ActivityAPI.lookupActivity(firebase, category, objTitle).then(function(snapshot){
-  //                 category = snap[i.toString()]['category'];
-  //                 span = snap[i.toString()]['span'];
-  //                 objTitle = snap[i.toString()]['title'];
-  //                 if (category == "food"){
-  //                   dataa["lightOnFood"+i] = {"title": "Light On: Food", "span": "1"};
-  //                   console.log("food " + i);
-  //                 }
-  //                 else if (category == "sleep"){
-  //                   dataa["lightOff"+i] = {"title": "Light Off", "span": span.toString()};
-  //                   console.log("sleep " + i);
-  //                 }
-  //                 else{
-                  
-  //                 var title = snapshot.title;
-  //                 var description = snapshot.description;
-  //                 var rating = snapshot.rating;
-              
-  //                 var obj = {};
-  //                 obj["title"] = title;
-  //                 obj["category"] = category;
-  //                 obj["description"] = description;
-  //                 obj["rating"] = rating;
-  //                 obj["span"] = span;
-
-  //                 dataa[objTitle] = obj;
-  //                 console.log(title + " " + i);
-  //                 }
-  //                 loopfunc(a,i)
-  //               });
-  //             }
-  //             a(0);
-  //             //console.log(dataa);
-              
-  //           // end of for loop
-  //           });
-  //           });
-  //           });
-  //           });
-  //           });
-  //         });
-  //         });
-  //       });
-  //     });
-  //   });
-  // }
-
+  fakeRender(a){
+    if(a == 'Flight Club'){
+      data.how.padding = 0;
+      data.test.padding = 0;
+      data.this.padding = 0;
+      data.hello.padding = 4;
+    
+    }else{
+      data.drag.padding = 0;
+      data.real.padding = 2;
+    }
+    this.setState({height: '100%'});
+  }
   static navigationOptions = TimeLineStyle.navigationOptions;
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ height: '100%', width:'100%'}}>
+      <View style={{ height: this.state.height, width:'100%'}}>
 
       <SortableListView
-        style={{ flex: 1 }}
+        style={{ flex: this.state.flex }}
         data={data}
         order={order}
         onRowMoved={e => {
           order.splice (e.to, 0, order.splice(e.from, 1)[0])
           this.forceUpdate()
         }}
-        renderRow={row => <RowComponent data={row} />}
+        renderRow={row => <RowComponent data={row} func = {(a)=>this.fakeRender(a)}/>}
       />
       </View>
 

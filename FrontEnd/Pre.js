@@ -6,6 +6,8 @@ import Button from 'apsl-react-native-button';
 import { TextField } from 'react-native-material-textfield';
 import Slider from 'react-native-slider';
 import Login from './Login';
+import {LoginAPI} from '../API/APIs';
+
 export default class Pre extends React.Component {
     constructor(){
       super();
@@ -43,12 +45,13 @@ export default class Pre extends React.Component {
                   value={22}
                   step={1}
                   maximumValue={24}
+                  
                   minimumValue={18}
                   onValueChange={(value) => this.setState({sleep: value})}
               />
               </View>
               <View style={{width:'90%', paddingTop:30}}>
-                <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>onLoginPress()}>
+                <Button style={{backgroundColor: '#016565', borderColor: '#000000', borderWidth: 2}} textStyle={{fontSize: 18, color: '#E9ECEB'}} onPress={()=>this.onLoginPress()}>
                   Submit
                 </Button>
               </View>
